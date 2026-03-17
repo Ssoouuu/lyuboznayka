@@ -1,3 +1,6 @@
+console.log('theory.js загрузился!');
+console.log('Буква из URL:', window.location.search);
+
 // КОНТЕНТ ДЛЯ КАЖДЫЙ БУКВЫ
 const lettersContent = {
     'А': {
