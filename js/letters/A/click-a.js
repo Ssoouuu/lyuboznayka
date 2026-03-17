@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Если все 3 правильные картинки нажаты
             if (correctCount === 3) {
-                // nextButton.style.display = 'inline-block';
-                // nextButton.style.animation = 'pulse 0.5s ease';
-                setTimeout(() => {
-                    window.location.href = '../../components-html/end.html?letter=А';
-                }, 1000);
+                nextButton.style.display = 'inline-block';
+                nextButton.style.animation = 'pulse 0.5s ease';
+                // setTimeout(() => {
+                //     window.location.href = '../../components-html/end.html?letter=А';
+                // }, 1000);
             }
         });
     });
