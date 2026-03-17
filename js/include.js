@@ -1,4 +1,4 @@
-fetch('components-html/header.html')
+fetch('../../components-html/header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
@@ -6,7 +6,7 @@ fetch('components-html/header.html')
     .catch(error => console.error('Ошибка загрузки шапки:', error));
 
 
-fetch('components-html/footer.html')
+fetch('../../components-html/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;

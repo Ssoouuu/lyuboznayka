@@ -61,9 +61,9 @@ function checkAnswer(e) {
                 loadQuestion();
             } else {
                 // Викторина пройдена
-                window.location.href = 'components-html/end.html?letter=В';
+                window.location.href = '../../components-html/end.html?letter=В';
             }
-        }, 2000);
+        }, 1000);
 
     } else {
         // Ответ неправильный
