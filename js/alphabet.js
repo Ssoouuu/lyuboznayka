@@ -39,7 +39,7 @@ function renderAlphabet() {
 
     alphabet.forEach(item => {
         const link = document.createElement('a');
-        link.href = `../components html/letter.html?letter=${item.letter[0]}`;
+        link.href = `components html/letter.html?letter=${item.letter[0]}`;
         link.className = `alphabet__letter alphabet__letter--${item.type}`;
         link.innerHTML = `<p>${item.letter}</p>`;
 
