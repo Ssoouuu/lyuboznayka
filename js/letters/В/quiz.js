@@ -1,18 +1,18 @@
 const quiz = [
     {
-        image: '../../public/alphabet/Буква В - вопрос 1.webp',
+        image: '../../../public/alphabet/Буква В - вопрос 1.webp',
         quest: 'В каком слове нет буквы «<span class="blue">В</span>»?',
         ans: ['ВОЛК', 'ВОРОНА', 'САМОЛЁТ'],
         correct: 2
     },
     {
-        image: '../../public/alphabet/Буква В - вопрос 2.webp',
+        image: '../../../public/alphabet/Буква В - вопрос 2.webp',
         quest: 'Сколько букв «<span class="blue">В</span>» спряталось на картинке?',
         ans: ['5', '3', '2'],
         correct: 1
     },
     {
-        image: '../../public/alphabet/Буква В - вопрос 3.webp',
+        image: '../../../public/alphabet/Буква В - вопрос 3.webp',
         quest: 'Чем похожи слова «<span class="blue">ВРАЧ</span>» и «<span class="blue">ВАЗА</span>»?',
         ans: ['Начинаются на В', 'Конец на А', 'Ничем'],
         correct: 0
