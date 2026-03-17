@@ -1,0 +1,102 @@
+.click-b {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding-bottom: 200px;
+
+    &__counter {
+        color: var(--text-blue);
+        font-size: 20px;
+        margin: 30px 0px;
+        align-self: flex-start;
+        margin-left: 20px;
+
+        span {
+            color: var(--yellow);
+        }
+    }
+
+    &__items {
+        margin: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+        -webkit-text-stroke: 2px currentColor;
+    }
+
+    &__word {
+        padding: 24px 50px;
+        border: 5px dashed var(--text-blue);
+        border-radius: 10px;
+        font-size: 60px;
+        background-color: var(--light-blue);
+        color: var(--text-blue);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            scale: 1.1;
+        }
+
+        &.shifted {
+            left: 100px;
+        }
+
+        &--yellow {
+            color: var(--yellow);
+            background: var(--light-yellow);
+            border: 5px dashed var(--yellow);
+        }
+
+        &--purple {
+            color: var(--dark-purple);
+            background: #ccbaf3;
+            border: 5px dashed var(--dark-purple);
+        }
+    }
+
+    &__word.correct {
+            color: var(--text-green);
+            background: var(--light-green);
+            border: 5px dashed var(--text-green);
+            animation: correct 0.5s ease;
+    }
+
+    &__word.wrong {
+            color: red;
+            background: rgb(248, 176, 176);
+            border: 5px dashed red;
+            animation: wrong 0.5s ease;
+    }
+
+@keyframes wrong {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-12px); }
+    40% { transform: translateX(12px); }
+    60% { transform: translateX(-8px); }
+    80% { transform: translateX(8px); }
+}
+
+@keyframes correct {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+}
+
+section.click-b {
+    padding-bottom: 20px;
+}
+

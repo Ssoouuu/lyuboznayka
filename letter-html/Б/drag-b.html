@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/scss/main.css">
+    <title>Любознайка - буква "Б"!</title>
+</head>
+
+<body>
+
+    <body>
+        <div id="header-placeholder"></div>
+
+        <main>
+            <section class="drag-b" id="drag-b">
+                <h1 class="drag__title">Где спряталась буква «<span class="letter-blue">Б</span>»?</h1>
+                <p class="drag__text">Кот Любознайка нашёл полянку с цветами. На одних цветах есть буква «<span
+                        class="letter-blue">Б</span>», на других — нет. Помоги бабочке сесть только на цветы с буквой
+                    «<span class="letter-blue">Б</span>» — перетащи её на каждый такой цветочек!</p>
+                <div class="drag-b__items">
+                    <img src="../../public/alphabet/цветок-Б1.png" alt="Цветочек" data-correct="false">
+                    <img src="../../public/alphabet/цветок-Б2.png" alt="Цветочек" data-correct="true">
+                    <img src="../../public/alphabet/цветок-Б3.png" alt="Цветочек" data-correct="false">
+                    <img src="../../public/alphabet/цветок-Б4.png" alt="Цветочек" data-correct="false">
+                    <img src="../../public/alphabet/цветок-Б5.png" alt="Цветочек" data-correct="true">
+                    <img src="../../public/alphabet/цветок-Б6.png" alt="Цветочек" data-correct="false">
+                    <img src="../../public/alphabet/цветок-Б7.png" alt="Цветочек" data-correct="true">
+                    <img src="../../public/alphabet/цветок-Б8.png" alt="Цветочек" data-correct="false">
+                </div>
+                <div class="drag-b__butterfly">
+                    <img src="../../public/alphabet/бабочка.png" alt="Бабочка" class="victory">
+
+                </div>
+                <p class="drag-b__hint">Нажми и перетащи!</p>
+            </section>
+            <section class="letter-btn">
+
+                <a href="javascript:history.back()" class="btn-green">Назад</a>
+                <a href="../Б/click-b.html" class="btn-yellow">Вперёд</a>
+
+            </section>
+        </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script src="/js/include.js"></script>
+        <script src="../../js/letters/Б/drag-b.js"></script>
+    </body>
+
+</body>
+
+</html>

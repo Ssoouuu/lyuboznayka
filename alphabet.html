@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/scss/main.css">
+    <title>Любознайка — алфавит</title>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="alphabet">
+            <h1>А<span class="yellow">л</span>ф<span class="red">а</span>в<span class="green">и</span>т</h1>
+            <h2 class="section-title">Каждый цвет имеет смысл:</h2>
+            <div class="sounds">
+            <div class="sounds__cards">
+                <div class="sounds__card yellow">
+                    <div class="sounds__card-picture">
+                        <img src="./public/base/гласные.svg" alt="Гласные">
+                    </div>
+                    <p class="sounds__card-text yellow">гласные, они «поют»</p>
+
+                </div>
+                <div class="sounds__card blue">
+                    <div class="sounds__card-picture">
+                        <img src="./public/base/согласные.svg" alt="Согласные">
+                    </div>
+                    <p class="sounds__card-text blue">они «стучат» и «звенят»</p>
+
+                </div>
+                <div class="sounds__card purple">
+                    <div class="sounds__card-picture">
+                        <img src="./public/base/буквы-помощники.svg" alt="буквы-помощники">
+                    </div>
+                    <p class="sounds__card-text purple">особые буквы-помощники</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="alphabet__wrapper" id="alphabet-container">          
+        </div>
+        </section>
+    </main>
+
+
+    <div id="footer-placeholder"></div>
+    <script src="/js/include.js"></script>
+    <script src="/js/alphabet.js"></script>
+</body>
+
+</html>

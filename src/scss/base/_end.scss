@@ -1,0 +1,46 @@
+.end {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    -webkit-text-stroke: 1px currentColor;
+    display: flex;
+
+    &-title {
+        margin: 0 auto;
+    }
+
+    &-text {
+        span {
+            font-size: 40px;
+        }
+    }
+
+    &-btn {
+        display: flex;
+        gap: 5%;
+    }
+
+    .btn-green,
+    .btn-yellow {
+        margin: 20px auto;
+        width: 30%;
+    }
+
+    &-image {
+        width: 100%;
+
+        img {
+            width: 40%;
+        }
+    }
+}
+    #confetti {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; 
+        pointer-events: none; 
+        z-index: 0;
+    }

@@ -1,0 +1,174 @@
+.action {
+    &__wrapper {
+        background: #97d8ff;
+        background: linear-gradient(90deg, rgba(151, 216, 255, 1) 0%, rgba(102, 160, 255, 1) 100%);
+        padding: 90px 50px 0px 50px;
+        border-radius: 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        color: var(--white);
+        margin: 0 auto;
+
+        h2 {
+            color: var(--white);
+        }
+
+        .btn-yellow {
+            width: 50%;
+            margin: 80px auto;
+        }
+    }
+
+            &__text {
+            font-size: 24px;
+            -webkit-text-stroke: 1px currentColor;
+        }
+
+    &__picture {
+        position: relative;
+        flex: 1;
+        min-height: 200px;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    // ========== АДАПТИВ ==========
+    
+    // Ноутбуки (до 1200px)
+    @media (max-width: 1200px) {
+        &__wrapper {
+            width: 85%;
+            padding: 80px 40px 0px 40px;
+            
+            .btn-yellow {
+                width: 60%;
+            }
+        }
+        
+        &__picture {
+            img {
+                max-height: 280px;
+            }
+        }
+    }
+    
+    // Планшеты горизонтально (до 992px)
+    @media (max-width: 992px) {
+        &__wrapper {
+            width: 90%;
+            padding: 70px 30px 0px 30px;
+            min-height: 450px;
+            
+            .btn-yellow {
+                width: 70%;
+                margin: 50px auto;
+            }
+        }
+        
+        &__picture {
+            img {
+                max-height: 250px;
+            }
+        }
+    }
+    
+    // Планшеты вертикально (до 768px)
+    @media (max-width: 768px) {
+        padding: 30px 15px;
+        
+        &__wrapper {
+            width: 95%;
+            padding: 60px 25px 0px 25px;
+            min-height: 400px;
+            
+            .btn-yellow {
+                width: 80%;
+                margin: 40px auto;
+            }
+        }
+        
+        &__text {
+            font-size: 18px;
+        }
+        
+        &__picture {
+            min-height: 180px;
+            
+            img {
+                max-height: 200px;
+            }
+        }
+    }
+    
+    // Мобильные (до 576px)
+    @media (max-width: 576px) {
+        padding: 20px 10px;
+        
+        &__wrapper {
+            width: 100%;
+            padding: 50px 20px 0px 20px;
+            border-radius: 20px;
+            min-height: 350px;
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .btn-yellow {
+                width: 90%;
+                margin: 30px auto;
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+        
+        &__text {
+            font-size: 16px;
+        }
+        
+        &__picture {
+            min-height: 150px;
+            margin-top: 20px;
+            
+            img {
+                max-height: 150px;
+            }
+        }
+    }
+    
+    // Маленькие мобильные (до 375px)
+    @media (max-width: 375px) {
+        &__wrapper {
+            padding: 40px 15px 0px 15px;
+            min-height: 300px;
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .btn-yellow {
+                width: 100%;
+                margin: 25px auto;
+            }
+        }
+        
+        &__text {
+            font-size: 14px;
+        }
+        
+        &__picture {
+            min-height: 120px;
+            
+            img {
+                max-height: 120px;
+            }
+        }
+    }
+}

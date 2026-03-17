@@ -1,0 +1,197 @@
+.alphabet {
+    .sounds {
+        &__cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 80px auto;
+            // width: 90%;
+            gap: 50px;
+        }
+
+        &__card {
+            border: 5px solid var(--yellow);
+            border-radius: 20px;
+            padding: 30px 15px;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .purple {
+            border-color: var(--dark-purple);
+        }
+
+        .blue {
+            border-color: var(--text-blue);
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        margin: 0 auto;
+        text-align: center;
+        gap: 40px;
+    }
+
+    &__letter {
+        position: relative;
+        padding: 30px;
+        color: var(--white);
+        background: var(--blue);
+        border-radius: 20px;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 5px 13px 0px rgba(34, 60, 80, 0.2);
+        font-size: 52px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        -webkit-text-stroke: 1px currentColor;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 35px;
+            height: 35px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-image: url("../../public/base/glare.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top left;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../../public/base/paw.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &--yellow {
+            background: var(--yellow);
+        }
+
+        &--purple {
+            background: var(--dark-purple);
+        }
+    }
+
+    // ========== АДАПТИВ ==========
+
+    @media (max-width: 1024px) {
+        &__wrapper {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        &__letter {
+            margin: 0 auto;
+        }
+
+        .sounds {
+            &__cards {
+                gap: 25px;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            &__card {
+                width: 230px;
+                height: 230px;
+                font-size: 20px;
+                padding: 10px;
+                flex: none;
+                scroll-snap-align: start;
+
+                text-align: center;
+            }
+        }
+    }
+
+    // Планшеты вертикально (768px и меньше)
+    @media (max-width: 768px) {
+        &__wrapper {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .sounds {
+            &__cards {
+                gap: 20px;
+                margin: 40px auto;
+            }
+
+            &__card {
+                width: 210px;
+                height: 210px;
+                padding: 25px 15px;
+                -webkit-text-stroke: 0px currentColor;
+
+                img {
+                    width: 80px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    // Мобильные (576px и меньше)
+    @media (max-width: 576px) {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        &__letter {
+            width: 140px;
+            height: 140px;
+
+            &::before {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .sounds {
+            &__card {
+                width: 210px;
+                height: 210px;
+            }
+        }
+    }
+}

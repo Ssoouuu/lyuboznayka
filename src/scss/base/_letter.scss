@@ -1,0 +1,60 @@
+.letter {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    // -webkit-text-stroke: 1px currentColor;
+    display: flex;
+    
+
+    &-title {
+        margin: 0 auto;
+    }
+
+    &-text {
+        span {
+            font-size: 40px;
+        }
+    }
+
+    &-btn {
+        display: flex;
+        gap: 5%;
+    }
+
+    &-image {
+        width: 100%;
+
+        img {
+            width: 60%;
+        }
+    }
+
+    &-yellow {
+        color: var(--yellow);
+    }
+
+    &-blue {
+        color: var(--text-blue);
+    }
+
+    .btn-green, .btn-yellow {
+        margin: 20px auto;
+        width: 30%;
+    }
+
+    // h1 {
+    //     font-size: 40px;
+    //     -webkit-text-stroke: 1px currentColor;
+    // }
+
+    // p {
+    //     font-size: 22px;
+    //     width: 80%;
+    //     margin: 0 auto;
+    // }
+}
+
+section.letter {
+    padding-top: 2%;
+}

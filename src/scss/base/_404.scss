@@ -1,0 +1,50 @@
+.error {
+    &__wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        gap: 50px;
+    }
+
+    &__content {
+        width: 100%;
+        -webkit-text-stroke: 1px currentColor;
+
+        h1 {
+            width: 100%;
+        }
+
+        &-btn {
+            width: 70%;
+        }
+
+        p {
+            width: 90%;
+        }
+    }
+
+    .btn-yellow {
+        margin-top: 30px;
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        width: 90%;
+
+        img {
+            
+            margin: auto 0;
+            position: absolute;
+            width: 55%;
+        }
+    }
+}
+
+section.error{
+    padding: 8% 11%;
+}

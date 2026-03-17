@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/scss/main.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" /> -->
+    <title>Любознайка</title>
+</head>
+
+<body>
+    <div id="header-placeholder" class="header-main"></div>
+
+    <main>
+        <section class="welcome">
+            <div class="welcome__wrapper">
+                <div class="welcome__content">
+                    <h1>В<span class="yellow">е</span>с<span class="red">ё</span>л<span class="green">ы</span>е бу<span
+                            class="pink">к</span>в<span class="purple">ы</span> ждут нас внутри!</h1>
+                    <p>Изучаем алфавит с котом Любознайкой. Просто, весело и полезно!</p>
+                    <a href="alphabet.html" class="btn-green">Вперед!</a>
+                </div>
+                <div class="welcome__picture">
+                    <!-- Группа для буквы А -->
+                    <div class="letter-group letter-group--a">
+                        <img src="./public/base/А.svg" alt="Буква А" class="letter">
+                        <img src="./public/base/light yellow.svg" alt="" class="light">
+                    </div>
+
+                    <!-- Группа для буквы Б -->
+                    <div class="letter-group letter-group--b">
+                        <img src="./public/base/Б.svg" alt="Буква Б" class="letter">
+                        <img src="./public/base/light blue.svg" alt="" class="light">
+                    </div>
+
+                    <!-- Группа для буквы В -->
+                    <div class="letter-group letter-group--c">
+                        <img src="./public/base/В.svg" alt="Буква В" class="letter">
+                        <img src="./public/base/light purple.svg" alt="" class="light">
+                    </div>
+
+                    <img src="./public/base/main (2).webp" alt="Любо">
+                </div>
+            </div>
+        </section>
+
+        <div class="welcome__wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+                <path fill="#f7fcff" fill-opacity="1"
+                    d="M0,32L40,58.7C80,85,160,139,240,138.7C320,139,400,85,480,53.3C560,21,640,11,720,37.3C800,64,880,128,960,138.7C1040,149,1120,107,1200,96C1280,85,1360,107,1400,117.3L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+                </path>
+            </svg>
+        </div>
+
+        <section class="work">
+            <h2 class="section-title">Как это работает?</h2>
+            <div class="work__cards">
+                <div class="work__card blue">
+                    <div class="work__card-image">
+                        <img src="./public/base/HowItWork-1.webp" alt="Выбираем букву">
+                    </div>
+                    <h3 class="work__card-title">Выбираем букву</h3>
+                    <p class="work__card-text">Нажимаем на любую букву в красочном алфавите</p>
+                </div>
+
+                <div class="work__card green">
+                    <div class="work__card-image">
+                        <img src="./public/base/HowItWork-1.webp" alt="Смотрим мультик">
+                    </div>
+                    <h3 class="work__card-title">Слушаем и смотрим</h3>
+                    <p class="work__card-text">Знакомимся: как она звучит и выглядит, ищем примеры</p>
+                </div>
+
+                <div class="work__card purple">
+                    <div class="work__card-image">
+                        <img src="./public/base/HowItWork-1.webp" alt="Играем">
+                    </div>
+                    <h3 class="work__card-title">Играем и закрепляем</h3>
+                    <p class="work__card-text">Выполняем простое игровое задание с этой буквой</p>
+                </div>
+
+                <div class="work__card orange">
+                    <div class="work__card-image">
+                        <img src="./public/base/HowItWork-1.webp" alt="Играем">
+                    </div>
+                    <h3 class="work__card-title">Ура, победа!</h3>
+                    <p class="work__card-text">Завершаем знакомство с буквой на позитивной ноте с котом Любознайкой
+                    </p>
+                </div>
+
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about__wrapper">
+                <div class="about__picture">
+                    <img src="./public/base/about.webp" alt="О нас">
+                </div>
+                <div class="about__content">
+                    <div class="about__text">«Любознайка» - это игровая платформа для первого знакомства с буквами. Мы
+                        верим, что учиться лучше всего через игру и положительные эмоции.</div>
+                    <div class="about__text">В компании нашего кота ребенок не запоминает буквы механически. Он видит их
+                        в словах, ищет на картинках и каждый раз получает похвалу за свои старания.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="action">
+            <div class="action__wrapper">
+                <h2 class="section-title">Любознайка уже ждёт тебя!</h2>
+                <p class="action__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <a href="alphabet.html" class="btn-yellow">К алфавиту</a>
+                <div class="action__picture">
+                    <img src="./public/base/action.webp" alt="Любознайка">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="./js/main.js"></script>
+    <script src="/js/include.js"></script>
+</body>
+
+</html>

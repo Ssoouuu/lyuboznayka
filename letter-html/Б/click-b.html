@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/scss/main.css">
+    <title>Любознайка - Буква «Б» в словах!</title>
+</head>
+
+<body>
+
+    <body>
+        <div id="header-placeholder"></div>
+        <main>
+            <section class="click-b" id="click">
+                <h1 class="click-b__title">Буква «<span class="letter-blue">Б</span>» в словах</h1>
+                <p class="click-b__text">Любознайка приготовил слова. В некоторых из них живёт буква «<span
+                        class="letter-blue">Б</span>». Найди и нажми на них!</p>
+                <div class="click-b__counter">
+                    <p class="counter-text">Найдено слов: <span id="counter">0</span> / 4</p>
+                </div>
+                <div class="click-b__items">
+                    <p class="click-b__word click-b__word--yellow" data-correct="true">БАК</p>
+                    <p class="click-b__word click-b__word--purple" data-correct="false">МАК</p>
+                    <p class="click-b__word click-b__word--blue" data-correct="true">КРАБ</p>
+                    <p class="click-b__word click-b__word--yellow shifted" data-correct="false">ВАЗА</p>
+                    <p class="click-b__word click-b__word--blue shifted" data-correct="false">ДОМ</p>
+                    <p class="click-b__word click-b__word--yellow shifted" data-correct="false">КОТ</p>
+                    <p class="click-b__word click-b__word--purple" data-correct="false">СОК</p>
+                    <p class="click-b__word click-b__word--blue" data-correct="true">БЫК</p>
+                    <p class="click-b__word click-b__word--purple" data-correct="true">БАНТ</p>
+                </div>
+            </section>
+            <section class="letter-btn">
+                <a href="javascript:history.back()" class="btn-green">Назад</a>
+                <a href="../../components html/end.html?letter=Б" class="btn-yellow">Вперёд</a>
+            </section>
+        </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script src="/js/include.js"></script>
+        <script src="../../js/letters/Б/click-b.js"></script>
+    </body>
+
+</body>
+
+</html>

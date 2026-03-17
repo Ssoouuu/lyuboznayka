@@ -1,0 +1,84 @@
+.quiz {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    &__content {
+        width: 60%;
+
+        h1 {
+            color: var(--text-green);
+        }
+
+        span {
+            font-size: 50px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__items {
+        .quiz__item {
+            color: var(--text-blue);
+            font-size: 46px;
+            background: var(--light-blue);
+            width: 80%;
+            text-align: center;
+            padding: 15px 0px;
+            border: 5px dashed var(--text-blue);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+
+        .wrong {
+            color: red;
+            background: rgb(248, 176, 176);
+            border: 5px dashed red;
+            animation: wrong 0.5s ease;
+        }
+
+        .correct {
+            color: var(--text-green);
+            background: var(--light-green);
+            border: 5px dashed var(--text-green);
+            animation: correct 0.5s ease;
+        }
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        width: 90%;
+
+        img {
+            margin: auto 0;
+            position: absolute;
+            width: 55%;
+            margin-left: 30px;
+        }
+    }
+
+    @keyframes wrong {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-12px); }
+        40% { transform: translateX(12px); }
+        60% { transform: translateX(-8px); }
+        80% { transform: translateX(8px); }
+    }
+
+    @keyframes correct {
+        0% { scale: 1; }
+        50% { scale: 1.2; }
+        100% { scale: 1; }
+    }
+}
