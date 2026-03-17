@@ -30,7 +30,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const key = urlParams.get('letter');
 
 if (!lettersContent[key]) {
-    window.location.href = 'components html/soon.html?letter=' + key;
+    window.location.href = 'components-html/soon.html?letter=' + key;
 } else {
     const data = lettersContent[key];
 
@@ -45,7 +45,7 @@ if (!lettersContent[key]) {
         // НАЧАТЬ ЗАНОВО
         const restartBtn = document.getElementById('restart-btn');
         if (restartBtn) {
-            restartBtn.href = 'components html' + '/letter.html?letter=' + key;
+            restartBtn.href = 'components-html' + '/letter.html?letter=' + key;
         }
     } else {
         // Если это letter.html - показываем обычный контент
