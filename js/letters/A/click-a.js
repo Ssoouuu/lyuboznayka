@@ -21,11 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Неправильный ответ
                 this.classList.add('wrong-click');
-                // this.style.pointerEvents = 'none';
-                
-                // setTimeout(() => {
-                //     this.classList.remove('wrong-click');
-                // }, 500);
             }
             
             // Если все 3 правильные картинки нажаты

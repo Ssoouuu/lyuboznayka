@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         correctCount = document.querySelectorAll('.drag-b__items img.done').length;
         if (correctCount >= totalCorrect) {
             nextButton.style.display = 'inline-block';
+                nextButton.style.animation = 'pulse 0.5s ease';
         }
     });
 });
