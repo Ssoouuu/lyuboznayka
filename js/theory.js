@@ -24,8 +24,16 @@ const lettersContent = {
         text: 'Посмотри на букву «В». На что она похожа? На очки или на два барабана? Попробуй произнести: <span class="letter-blue">В-в-в</span>! Чувствуешь, как зубки касаются нижней губы? С буквы «<span class="letter-blue">В</span>» начинаются важные слова: <span class="letter-blue">В</span>ода, <span class="letter-blue">В</span>оздух, <span class="letter-blue">В</span>ремя. А ещё <span class="letter-blue">В</span>олк, <span class="letter-blue">В</span>орона и <span class="letter-blue">В</span>елосипед!',
         image: '../public/alphabet/Буква В - теория.webp',
         link: '../letter-html/В/quiz.html?letter=В',
-        endImage: '../public/alphabet/end-B.webp',
+        endImage: '../public/alphabet/end-C.webp',
         endText: 'Ты отлично прошел викторину на знание буквы «<span class="letter-blue">В</span>»!'
+    },
+    'Г': {
+        title: 'Ура! Новая буква — «<span class="letter-blue">Г</span>»!',
+        text: 'Познакомься с буквой «<span class="letter-blue">Г</span>». Она стоит на стройной ножке, а сверху у неё маленькая шапочка. На ней висит спелая <span class="letter-blue">Г</span>руша — любимое лакомство Любознайки! Буква «<span class="letter-blue">Г</span>» живёт в начале слов: <span class="letter-blue">Г</span>риб, <span class="letter-blue">Г</span>руша, <span class="letter-blue">Г</span>усеница. А ещё она прячется в середине слов: кни<span class="letter-blue">Г</span>а, и<span class="letter-blue">Г</span>ра, ва<span class="letter-blue">Г</span>он. Какая она трудолюбивая!',
+        image: '../public/alphabet/Буква Г - теория.webp',
+        link: '../letter-html/Г/click-d.html?letter=Г',
+        endImage: '../public/alphabet/end-D.webp',
+        endText: 'Молодец! Ты познакомился с буквой «<span class="letter-blue">Г</span>»!'
     }
 };
 

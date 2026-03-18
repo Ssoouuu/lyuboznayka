@@ -1,11 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const butterfly = document.querySelector('.drag-b__butterfly img');
     const flowers = document.querySelectorAll('.drag-b__items img');
     const container = document.getElementById('drag-b');
     const nextButton = document.querySelector('.btn-yellow');
+    const counter = document.getElementById('counter');
 
     nextButton.style.display = 'none';
-    container.style.position = 'relative'; // уже должно быть
+    container.style.position = 'relative';
+
+    let corrCount = 0;
+
+    function updateCounter() {
+        counter.textContent = corrCount;
+    }
+
+    updateCounter();
 
     let correctCount = 0;
     const totalCorrect = document.querySelectorAll('[data-correct="true"]').length;
@@ -13,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let dragging = false;
     let offsetX, offsetY;
 
-    butterfly.addEventListener('mousedown', function(e) {
+    butterfly.addEventListener('mousedown', function (e) {
         e.preventDefault();
 
         // Запоминаем координаты бабочки на экране (до добавления класса)
@@ -35,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dragging = true;
     });
 
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function (e) {
         if (!dragging) return;
 
         const containerRect = container.getBoundingClientRect();
@@ -43,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         butterfly.style.top = (e.clientY - containerRect.top - offsetY) + 'px';
     });
 
-    document.addEventListener('mouseup', function() {
+    document.addEventListener('mouseup', function () {
         if (!dragging) return;
 
         const butterflyRect = butterfly.getBoundingClientRect();
@@ -58,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (flower.dataset.correct === 'true') {
                     flower.classList.add('correct', 'done');
+                    corrCount++;
+                    updateCounter();
                 } else {
                     flower.classList.add('wrong');
                     setTimeout(() => flower.classList.remove('wrong'), 500);
@@ -74,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         correctCount = document.querySelectorAll('.drag-b__items img.done').length;
         if (correctCount >= totalCorrect) {
             nextButton.style.display = 'inline-block';
-                nextButton.style.animation = 'pulse 0.5s ease';
+            nextButton.style.animation = 'pulse 0.5s ease';
         }
     });
 });

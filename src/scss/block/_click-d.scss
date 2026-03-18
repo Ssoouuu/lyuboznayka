@@ -1,0 +1,73 @@
+.click-d {
+    text-align: center;
+
+    h1 {
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+        margin: 50px auto;
+        width: 90%;
+
+        img {
+            transition: all 0.3s ease;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+
+            img.correct {
+                box-shadow: 0 0 25px 5px var(--green);
+                border-radius: 15px;
+                padding: 10px;
+                animation: correct 0.5s ease;
+            }
+
+            img.wrong {
+                animation: wrong 0.5s ease;
+                box-shadow: 0 0 25px 5px red;
+                border-radius: 15px;
+                padding: 10px;
+            }
+        
+    }
+
+    @keyframes wrong {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-12px);
+    }
+    50% {
+        transform: translateX(12px);
+    }
+    75% {
+        transform: translateX(-6px);
+    }
+}
+
+    @keyframes correct {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+}
+
+section.click-d {
+    padding-bottom: 1%;
+}

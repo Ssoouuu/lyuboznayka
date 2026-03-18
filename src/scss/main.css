@@ -1554,7 +1554,6 @@ section.drag-b {
   color: var(--text-blue);
   font-size: 20px;
   margin: 30px 0px;
-  align-self: flex-start;
   margin-left: 20px;
 }
 .click-b__counter span {
@@ -1722,4 +1721,66 @@ section.click-b {
   100% {
     scale: 1;
   }
+}
+
+.click-d {
+  text-align: center;
+}
+.click-d h1 {
+  width: 100%;
+}
+.click-d__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  margin: 50px auto;
+  width: 90%;
+}
+.click-d__items img {
+  transition: all 0.3s ease;
+}
+.click-d__items img:hover {
+  scale: 1.1;
+}
+.click-d__items img.correct {
+  box-shadow: 0 0 25px 5px var(--green);
+  border-radius: 15px;
+  padding: 10px;
+  animation: correct 0.5s ease;
+}
+.click-d__items img.wrong {
+  animation: wrong 0.5s ease;
+  box-shadow: 0 0 25px 5px red;
+  border-radius: 15px;
+  padding: 10px;
+}
+@keyframes wrong {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-12px);
+  }
+  50% {
+    transform: translateX(12px);
+  }
+  75% {
+    transform: translateX(-6px);
+  }
+}
+@keyframes correct {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+section.click-d {
+  padding-bottom: 1%;
 }/*# sourceMappingURL=main.css.map */

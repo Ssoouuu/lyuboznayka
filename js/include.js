@@ -12,5 +12,3 @@ fetch('../../components-html/footer.html')
         document.getElementById('footer-placeholder').innerHTML = data;
     })
     .catch(error => console.error('Ошибка загрузки подвала:', error));
-
-console.log('include.js загрузился!');
