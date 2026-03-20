@@ -30,7 +30,7 @@
         padding: 24px 50px;
         border: 5px dashed var(--text-blue);
         border-radius: 10px;
-        font-size: 60px;
+        font-size: 50px;
         background-color: var(--light-blue);
         color: var(--text-blue);
         transition: all 0.3s ease;
@@ -39,6 +39,10 @@
 
         &:hover {
             scale: 1.1;
+        }
+
+        span {
+            font-size: 40px;
         }
 
         &.shifted {
@@ -59,43 +63,53 @@
     }
 
     &__word.correct {
-            color: var(--text-green);
-            background: var(--light-green);
-            border: 5px dashed var(--text-green);
-            animation: correct 0.5s ease;
+        color: var(--text-green);
+        background: var(--light-green);
+        border: 5px dashed var(--text-green);
+        animation: correct 0.5s ease;
     }
 
     &__word.wrong {
-            color: red;
-            background: rgb(248, 176, 176);
-            border: 5px dashed red;
-            animation: wrong 0.5s ease;
+        color: red;
+        background: rgb(248, 176, 176);
+        border: 5px dashed red;
+        animation: wrong 0.5s ease;
     }
 
-@keyframes wrong {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-12px); }
-    40% { transform: translateX(12px); }
-    60% { transform: translateX(-8px); }
-    80% { transform: translateX(8px); }
-}
-
-@keyframes correct {
-    0% {
-        scale: 1;
+    @keyframes wrong {
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+        20% {
+            transform: translateX(-12px);
+        }
+        40% {
+            transform: translateX(12px);
+        }
+        60% {
+            transform: translateX(-8px);
+        }
+        80% {
+            transform: translateX(8px);
+        }
     }
 
-    50% {
-        scale: 1.2;
-    }
+    @keyframes correct {
+        0% {
+            scale: 1;
+        }
 
-    100% {
-        scale: 1;
+        50% {
+            scale: 1.2;
+        }
+
+        100% {
+            scale: 1;
+        }
     }
-}
 }
 
 section.click-b {
     padding-bottom: 20px;
 }
-

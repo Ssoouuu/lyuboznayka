@@ -1,0 +1,141 @@
+.words-d {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+
+    &__text {
+        margin: 30px 0;
+    }
+
+    &__rows {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin: 50px 0px;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    // &__item {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     text-align: center;
+    //     flex-direction: row;
+    //     text-align: center;
+    //     padding: 24px 50px;
+    //     border: 5px dashed var(--text-blue);
+    //     border-radius: 10px;
+    //     font-size: 40px;
+    //     background-color: var(--light-blue);
+    //     color: var(--text-blue);
+    //     transition: all 0.3s ease;
+    //     cursor: pointer;
+    //     position: relative;
+
+    //     &:hover {
+    //         scale: 1.1;
+    //     }
+
+    //     span {
+    //         font-size: 30px;
+    //         margin-right: 5px;
+    //     }
+
+    //     &--yellow {
+    //         background: var(--light-yellow);
+    //         color: var(--yellow);
+    //         border-color: var(--yellow);
+    //     }
+
+    //     &--green {
+    //         background: var(--light-green);
+    //         color: var(--text-green);
+    //         border-color: var(--text-green);
+    //     }
+
+    //     &--purple {
+    //         background: var(--light-purple);
+    //         color: var(--dark-purple);
+    //         border-color: var(--dark-purple);
+    //     }
+    // }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        color: var(--text-blue);
+        font-size: 22px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 24px 50px;
+        border: 5px dashed var(--text-blue);
+        border-radius: 10px;
+
+        .icon {
+            font-size: 100px;
+        }
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &__item.correct {
+        color: var(--text-green);
+        background: var(--light-green);
+        border: 5px dashed var(--text-green);
+        animation: correct 0.5s ease;
+    }
+
+    &__item.wrong {
+        color: red;
+        background: rgb(248, 176, 176);
+        border: 5px dashed red;
+        animation: wrong 0.5s ease;
+    }
+
+    @keyframes wrong {
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+        20% {
+            transform: translateX(-12px);
+        }
+        40% {
+            transform: translateX(12px);
+        }
+        60% {
+            transform: translateX(-8px);
+        }
+        80% {
+            transform: translateX(8px);
+        }
+    }
+
+    @keyframes correct {
+        0% {
+            scale: 1;
+        }
+
+        50% {
+            scale: 1.2;
+        }
+
+        100% {
+            scale: 1;
+        }
+    }
+}
+
+section.words-d {
+    padding-bottom: 20px;
+}

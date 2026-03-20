@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/scss/main.css">
+    <title>Любознайка - буква «Г»!</title>
+</head>
+
+<body>
+
+    <body>
+        <div id="header-placeholder"></div>
+
+        <main>
+            <section class="words-d">
+                <h1 class="words-d__title">Найди лишний предмет</h1>
+                <p class="words-d__text">
+                    В каждом ряду спрятался один предмет, в названии которого <span
+                        style="border-bottom: 3px solid var(--text-blue); color: var(--text-blue);">нет</span> буквы
+                    «<span class="letter-blue">Г</span>». Найди его!
+                </p>
+                <div class="words-d__rows">
+                    <div class="words-d__row words-d__row">
+                        <div class="words-d__item words-d__item--yellow" data-correct="false">
+                            <p class="icon">🍄</p>
+                            <p>ГРИБ</p>
+                        </div>
+                        <div class="words-d__item words-d__item--purple" data-correct="false">
+                            <p class="icon">🍐</p>
+                            <p>ГРУША</p>
+                        </div>
+                        <div class="words-d__item words-d__item--blue" data-correct="false">
+                            <p class="icon">📖</p>
+                            <p>КНИГА</p>
+                        </div>
+                        <div class="words-d__item words-d__item--green" data-correct="true">
+                            <p class="icon">🏀</p>
+                            <p>МЯЧ</p>
+                        </div>
+                    </div>
+                    <div class="words-d__row words-d__row--one">
+                        <div class="words-d__item words-d__item--yellow" data-correct="false">
+                            <p class="icon">🥧</p>
+                            <p>ПИРОГ</p>
+                        </div>
+                        <div class="words-d__item words-d__item--purple" data-correct="true">
+                            <p class="icon">🐱</p>
+                            <p>КОТ</p>
+                        </div>
+                        <div class="words-d__item words-d__item--blue" data-correct="false">
+                            <p class="icon">👄</p>
+                            <p>ГУБЫ</p>
+                        </div>
+                        <div class="words-d__item words-d__item--green" data-correct="false">
+                            <p class="icon">🚂</p>
+                            <p>ВАГОН</p>
+                        </div>
+                    </div>
+                    <div class="words-d__row words-d__row--two">
+                        <div class="words-d__item words-d__item--yellow" data-correct="false">
+                            <p class="icon">🎸</p>
+                            <p>ГИТАРА</p>
+                        </div>
+                        <div class="words-d__item words-d__item--purple" data-correct="false">
+                            <p class="icon">📅</p>
+                            <p>ГОД</p>
+                        </div>
+                        <div class="words-d__item words-d__item--blue" data-correct="true">
+                            <p class="icon">🧦</p>
+                            <p>НОСКИ</p>
+                        </div>
+                        <div class="words-d__item words-d__item--green" data-correct="false">
+                            <p class="icon">📖</p>
+                            <p>КНИГА</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="letter-btn">
+                <a href="javascript:history.back()" class="btn-green">Назад</a>
+                <a href="#" class="btn-yellow"
+                    onClick="window.location.href = '../../components-html/end.html?letter=Г'">Вперёд</a>
+            </section>
+        </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script src="../../js/include.js"></script>
+        <script src="../../js/letters/Г/words-d.js"></script>
+    </body>
+
+</body>
+
+</html>

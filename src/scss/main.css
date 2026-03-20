@@ -199,7 +199,7 @@ h1 {
   --light-blue: #D7F1FF;
   --yellow: #FFBD4D;
   --dark-purple: #8B5CF6;
-  --light-purple: #B294F5;
+  --light-purple: #c7b4f1;
   --light-blue: #D7F1FF;
   --light-yellow: #FFEFD3;
   --light-red: #FFE5E5;
@@ -1570,7 +1570,7 @@ section.drag-b {
   padding: 24px 50px;
   border: 5px dashed var(--text-blue);
   border-radius: 10px;
-  font-size: 60px;
+  font-size: 50px;
   background-color: var(--light-blue);
   color: var(--text-blue);
   transition: all 0.3s ease;
@@ -1579,6 +1579,9 @@ section.drag-b {
 }
 .click-b__word:hover {
   scale: 1.1;
+}
+.click-b__word span {
+  font-size: 40px;
 }
 .click-b__word.shifted {
   left: 100px;
@@ -1783,4 +1786,88 @@ section.click-b {
 
 section.click-d {
   padding-bottom: 1%;
+}
+
+.words-d {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+.words-d__text {
+  margin: 30px 0;
+}
+.words-d__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 50px 0px;
+}
+.words-d__row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+}
+.words-d__item {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-blue);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 24px 50px;
+  border: 5px dashed var(--text-blue);
+  border-radius: 10px;
+}
+.words-d__item .icon {
+  font-size: 100px;
+}
+.words-d__item:hover {
+  scale: 1.1;
+}
+.words-d__item.correct {
+  color: var(--text-green);
+  background: var(--light-green);
+  border: 5px dashed var(--text-green);
+  animation: correct 0.5s ease;
+}
+.words-d__item.wrong {
+  color: red;
+  background: rgb(248, 176, 176);
+  border: 5px dashed red;
+  animation: wrong 0.5s ease;
+}
+@keyframes wrong {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-12px);
+  }
+  40% {
+    transform: translateX(12px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+@keyframes correct {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+section.words-d {
+  padding-bottom: 20px;
 }/*# sourceMappingURL=main.css.map */
