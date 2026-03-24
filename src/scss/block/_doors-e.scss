@@ -1,0 +1,81 @@
+.doors-e {
+    text-align: center;
+
+    h1 {
+        margin: 50px auto;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+    }
+
+    &__item {
+        position: relative;
+        transition: all 0.3s ease;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    
+
+    &__icon {
+    font-size: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 20px;
+    border-radius: 50%;
+    display: none;
+     transform: translate(-50%, -50%);
+}
+
+&__icon.correct {
+    display: block;
+    box-shadow: 0 0 25px 5px var(--green);
+    animation: correct 1.2s ease-in-out infinite;
+}
+
+&__icon.wrong {
+    display: block;
+    animation: wrong 0.5s ease;
+    box-shadow: 0 0 25px 5px red;
+}
+
+@keyframes correct {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(-8deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(8deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes wrong {
+    0% {
+        transform: translate(-50%, -50%) translateX(0);
+    }
+    25% {
+        transform: translate(-50%, -50%) translateX(-12px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateX(12px);
+    }
+    75% {
+        transform: translate(-50%, -50%) translateX(-6px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(0);
+    }
+}
+}

@@ -39,9 +39,9 @@ const lettersContent = {
         title: 'Смотри — это буква «<span class="letter-blue">Д</span>»!',
         text: 'А ты знаешь букву «<span class="letter-blue">Д</span>»? Она стоит на крепких ножках, а сверху у неё крыша, как у домика. А ещё она прячется в словах: <span class="letter-blue">Д</span>ом, <span class="letter-blue">Д</span>руг, са<span class="letter-blue">Д</span>. Когда произносишь букву «<span class="letter-blue">Д</span>», язычок упирается в верхние зубки и звонко стучит: <span class="letter-blue">Д-д-д</span>! Давай изучим её вместе с Любознайкой!',
         image: '../public/alphabet/Буква Д - теория.webp',
-        link: '../letter-html/Г/click-d.html?letter=Г',
+        link: '../letter-html/Д/click-e.html?letter=Д',
         endImage: '../public/alphabet/Конец-Д.webp',
-        endText: 'Молодец! Ты познакомился с буквой «<span class="letter-blue">Г</span>»!'
+        endText: 'Молодец! Ты отлично справился с изучением буквы «<span class="letter-blue">Д</span>»!'
     }
 };
 

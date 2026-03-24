@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/scss/main.css">
+    <title>Любознайка - буква «Д»!</title>
+</head>
+
+<body>
+
+    <body>
+        <div id="header-placeholder"></div>
+
+        <main>
+            <section class="doors-e" id="doors-e">
+                <h1 class="doors-e__title">А здесь есть буква «<span class="letter-blue">Д</span>»?</h1>
+                <p class="doors-e__text">За дверями спрятались разные предметы. Но открываются только те, у которых на табличке есть буква «<span class="letter-blue">Д</span>». Помоги Любознайке найти их!</p>
+                <div class="click-b__counter">
+                    <p class="counter-text">Открыто верных дверей: <span id="counter">0</span> / 4</p>
+                </div>
+                <div class="doors-e__items">
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-1.png" alt="Дверь 1" data-correct="true" class="doors-e__image">
+                        <p class="doors-e__icon">🏠</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-2.png" alt="Дверь 2" data-correct="false" class="doors-e__image">
+                        <p class="doors-e__icon">🏀</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-3.png" alt="Дверь 3" data-correct="true" class="doors-e__image">
+                        <p class="doors-e__icon">🍯</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-4.png" alt="Дверь 4" data-correct="false" class="doors-e__image">
+                        <p class="doors-e__icon">🐳</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-5.png" alt="Дверь 5" data-correct="false" class="doors-e__image">
+                        <p class="doors-e__icon">🎂</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-6.png" alt="Дверь 6" data-correct="true" class="doors-e__image">
+                        <p class="doors-e__icon">🌱</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-7.png" alt="Дверь 7" data-correct="true" class="doors-e__image">
+                        <p class="doors-e__icon">🍈</p>
+                    </div>
+                    <div class="doors-e__item">
+                        <img src="../../public/alphabet/door-8.png" alt="Дверь 8" data-correct="false" class="doors-e__image">
+                        <p class="doors-e__icon">🐯</p>
+                    </div>
+                </div>
+            </section>
+            <section class="letter-btn">
+
+                <a href="javascript:history.back()" class="btn-green">Назад</a>
+                <a href="#" class="btn-yellow"
+                    onClick="window.location.href = '../../components-html/end.html?letter=Д'">Вперёд</a>
+
+            </section>
+        </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script src="../../js/include.js"></script>
+        <script src="../../js/letters/Д/doors-e.js"></script>
+    </body>
+
+</body>
+
+</html>
