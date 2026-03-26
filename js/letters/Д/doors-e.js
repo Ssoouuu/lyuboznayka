@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if(correctCount  === 4) {
                 nextButton.style.display = 'inline-block';
-                nextButton.style.animation = 'pulse 0.5s ease'
+                nextButton.style.animation = 'pulse 0.5s ease';
+                addReward('Д');
             }
         })
     })

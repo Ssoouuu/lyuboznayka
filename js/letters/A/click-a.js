@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (correctCount === 3) {
                 nextButton.style.display = 'inline-block';
                 nextButton.style.animation = 'pulse 0.5s ease';
+                addReward('А');
                 // setTimeout(() => {
                 //     window.location.href = '../../components-html/end.html?letter=А';
                 // }, 1000);

@@ -1,0 +1,91 @@
+.rewards {
+    h2 {
+        color: var(--text-green);
+        margin-bottom: 100px;
+    }
+
+    .action {
+        display: none;
+        position: relative;
+        overflow: hidden;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto 50px auto;
+        }
+
+        &__wrapper {
+            width: 100%;
+            padding: 90px 0px;
+        }
+
+        &__picture {
+            position: absolute;
+            width: 100%;
+
+            &-img {
+                // position: absolute;
+                bottom: 0;
+                width: auto;
+                height: auto;
+                transition: transform 0.2s;
+                margin-top: 50px;
+
+                &:nth-child(1) {
+                    left: -10px;
+                    top: 50px;
+                    right: auto;
+                    transform: rotate(50deg);
+                }
+
+                &:nth-child(2) {
+                    top: 30px;
+                    right: -10px;
+                    left: auto;
+                    transform: rotate(-70deg) scaleX(-1);
+                }
+            }
+        }
+
+        .btn-yellow {
+            margin: 50px auto;
+            z-index: 100;
+        }
+    }
+
+    &__wrapper {
+        display: block;
+        position: relative;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+    }
+
+    &__item {
+        img {
+            transition: all 0.3s ease;
+        width: 90%;
+
+        &:hover {
+            scale: 1.2;
+        }
+    }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: left;
+        margin-top: 100px;
+
+        img {
+            width: 50%;
+        }
+    }
+}

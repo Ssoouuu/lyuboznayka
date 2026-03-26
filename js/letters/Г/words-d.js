@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if(correctCount === 3) {
                 nextButton.style.display = 'inline-block';
-                nextButton.style.animation = 'pulse 0.5s ease'                
+                nextButton.style.animation = 'pulse 0.5s ease';
+                addReward('Г');               
             }
         })
 

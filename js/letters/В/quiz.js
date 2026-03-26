@@ -61,6 +61,7 @@ function checkAnswer(e) {
                 loadQuestion();
             } else {
                 // Викторина пройдена
+                addReward('В');
                 window.location.href = '../../components-html/end.html?letter=В';
             }
         }, 1000);

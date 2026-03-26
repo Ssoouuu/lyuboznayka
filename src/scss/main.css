@@ -234,7 +234,7 @@ h1 {
 .header .menu {
   display: flex;
   list-style: none;
-  gap: 10vw;
+  gap: 8vw;
 }
 .header .menu__item a {
   text-decoration: none;
@@ -412,6 +412,79 @@ section.letter {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
+}
+
+.rewards h2 {
+  color: var(--text-green);
+  margin-bottom: 100px;
+}
+.rewards .action {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.rewards .action h2 {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto 50px auto;
+}
+.rewards .action__wrapper {
+  width: 100%;
+  padding: 90px 0px;
+}
+.rewards .action__picture {
+  position: absolute;
+  width: 100%;
+}
+.rewards .action__picture-img {
+  bottom: 0;
+  width: auto;
+  height: auto;
+  transition: transform 0.2s;
+  margin-top: 50px;
+}
+.rewards .action__picture-img:nth-child(1) {
+  left: -10px;
+  top: 50px;
+  right: auto;
+  transform: rotate(50deg);
+}
+.rewards .action__picture-img:nth-child(2) {
+  top: 30px;
+  right: -10px;
+  left: auto;
+  transform: rotate(-70deg) scaleX(-1);
+}
+.rewards .action .btn-yellow {
+  margin: 50px auto;
+  z-index: 100;
+}
+.rewards__wrapper {
+  display: block;
+  position: relative;
+}
+.rewards__items {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+.rewards__item img {
+  transition: all 0.3s ease;
+  width: 90%;
+}
+.rewards__item img:hover {
+  scale: 1.2;
+}
+.rewards__image {
+  display: flex;
+  justify-content: left;
+  margin-top: 100px;
+}
+.rewards__image img {
+  width: 50%;
 }
 
 /* Blocks */
@@ -2161,14 +2234,14 @@ section.words-d {
 .doors-e__icon.correct {
   display: block;
   box-shadow: 0 0 25px 5px var(--green);
-  animation: correct 1.2s ease-in-out infinite;
+  animation: right 1.2s ease-in-out infinite;
 }
 .doors-e__icon.wrong {
   display: block;
-  animation: wrong 0.5s ease;
+  animation: mistaken 0.5s ease;
   box-shadow: 0 0 25px 5px red;
 }
-@keyframes correct {
+@keyframes right {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
@@ -2182,7 +2255,7 @@ section.words-d {
     transform: translate(-50%, -50%) rotate(0deg);
   }
 }
-@keyframes wrong {
+@keyframes mistaken {
   0% {
     transform: translate(-50%, -50%) translateX(0);
   }
