@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Функция проверки - все ли домики заполнены
     function checkAllHousesFilled() {
         let allFilled = true;
-        
+
         houses.forEach(house => {
             const placeholder = house.querySelector('.placeholder');
             if (placeholder.textContent === '_') {
                 allFilled = false; // если хоть один домик пустой
             }
         });
-        
+
         return allFilled;
     }
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     letterA.addEventListener('mousedown', function (e) {
         dragging = true;
 
-            letterA.style.transform = 'none';
+        letterA.style.transform = 'none';
 
         const rect = letterA.getBoundingClientRect();
         offsetX = e.clientX - rect.left;
@@ -80,13 +80,26 @@ document.addEventListener('DOMContentLoaded', function () {
         // Возвращаем букву
         letterA.style.left = '';
         letterA.style.top = '';
-            letterA.style.transform = 'none';
+        letterA.style.transform = 'none';
         letterA.style.position = 'absolute';
 
         dragging = false;
 
         // ПРОВЕРЯЕМ - все ли домики заполнены?
         if (checkAllHousesFilled()) {
+            confetti({
+                particleCount: 250,
+                spread: 150,
+                origin: { y: 0.5, x: 0.8 },
+                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+            });
+            confetti({
+                particleCount: 250,
+                spread: 150,
+                origin: { y: 0.5, x: 0.2 },
+                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+            });
+            letterA.style.pointerEvents = 'none';
             // Если все заполнены - показываем кнопку "Вперед"
             nextButton.style.display = 'inline-block';
             nextButton.style.animation = 'pulse 0.5s ease';

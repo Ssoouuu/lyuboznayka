@@ -933,6 +933,7 @@ section.letter {
   justify-content: center;
   width: 40%;
   min-height: 60vh;
+  -webkit-text-stroke: 1px currentColor;
 }
 @media (max-width: 1200px) {
   .about__wrapper {
@@ -1043,6 +1044,7 @@ section.letter {
 }
 .action__wrapper h2 {
   color: var(--white);
+  line-height: 150%;
 }
 .action__wrapper .btn-yellow {
   width: 50%;
@@ -1381,7 +1383,8 @@ section.letter {
   position: absolute;
   bottom: 50px;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -75px;
+  transform: none;
   padding: 30px;
   color: var(--white);
   background: var(--yellow);
@@ -1421,7 +1424,7 @@ section.letter {
   left: 50%;
   transform: translateX(-50%);
   font-size: 18px;
-  color: var(--text-gray);
+  color: var(--text-green);
   margin: 0;
   white-space: nowrap;
   z-index: 90;
@@ -1478,7 +1481,7 @@ section.letter-btn {
 }
 .click-a__desc {
   color: var(--text-blue);
-  margin: 30px 0;
+  margin: 30px 0px 50px 0;
 }
 .click-a__images {
   display: grid;
@@ -1493,6 +1496,7 @@ section.letter-btn {
   -o-object-fit: contain;
      object-fit: contain;
   transition: all 0.3s ease;
+  padding: 20px;
 }
 .click-a__images img:nth-child(even) {
   width: 70%;
@@ -1505,13 +1509,25 @@ section.letter-btn {
   border-radius: 20px;
   box-shadow: 0 0 20px var(--green);
   opacity: 0.9;
+  animation: correct 0.5s ease;
 }
 .click-a .click-a__images img.wrong-click {
   border: 5px solid red;
   border-radius: 20px;
   box-shadow: 0 0 20px red;
   opacity: 0.9;
-  animation: shake 0.2s ease;
+  animation: shake 0.4s ease;
+}
+@keyframes correct {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
 }
 @keyframes shake {
   0%, 100% {
@@ -1593,14 +1609,17 @@ section.click-a {
   0%, 100% {
     transform: translateX(0);
   }
-  25% {
+  20% {
     transform: translateX(-12px);
   }
-  50% {
+  40% {
     transform: translateX(12px);
   }
-  75% {
-    transform: translateX(-6px);
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
   }
 }
 @keyframes butterfly {
@@ -1816,6 +1835,7 @@ section.click-b {
 }
 .click-d__items img {
   transition: all 0.3s ease;
+  padding: 10px;
 }
 .click-d__items img:hover {
   scale: 1.1;
@@ -1823,14 +1843,12 @@ section.click-b {
 .click-d__items img.correct {
   box-shadow: 0 0 25px 5px var(--green);
   border-radius: 15px;
-  padding: 10px;
   animation: correct 0.5s ease;
 }
 .click-d__items img.wrong {
   animation: wrong 0.5s ease;
   box-shadow: 0 0 25px 5px red;
   border-radius: 15px;
-  padding: 10px;
 }
 @keyframes wrong {
   0%, 100% {
@@ -2209,6 +2227,7 @@ section.words-d {
   margin: 50px auto;
 }
 .doors-e__items {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;

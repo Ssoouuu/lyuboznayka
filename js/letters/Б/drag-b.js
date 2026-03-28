@@ -84,6 +84,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         correctCount = document.querySelectorAll('.drag-b__items img.done').length;
         if (correctCount >= totalCorrect) {
+                        confetti({
+                particleCount: 250,
+                spread: 150,
+                origin: { y: 0.5, x: 0.8 },
+                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+            });
+            confetti({
+                particleCount: 250,
+                spread: 150,
+                origin: { y: 0.5, x: 0.2 },
+                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+            });
+            butterfly.style.pointerEvents = 'none';
             nextButton.style.display = 'inline-block';
             nextButton.style.animation = 'pulse 0.5s ease';
         }

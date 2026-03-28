@@ -61,9 +61,10 @@
 
     #letter-A {
         position: absolute;
-        bottom: 50px; // поднимаем букву повыше
+        bottom: 50px; 
         left: 50%;
-        transform: translateX(-50%);
+        margin-left: -75px;
+        transform: none;
         padding: 30px;
         color: var(--white);
         background: var(--yellow);
@@ -105,7 +106,7 @@
         left: 50%;
         transform: translateX(-50%);
         font-size: 18px;
-        color: var(--text-gray);
+        color: var(--text-green);
         margin: 0;
         white-space: nowrap;
         z-index: 90;

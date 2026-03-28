@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     words.forEach(word => {
         word.addEventListener('click', function () {
-            if (this.classList.contains('clicked')) return;
-
-            this.classList.add('clicked');
 
             if (this.dataset.correct === 'true') {
                 this.classList.add('correct');
@@ -26,9 +23,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateCounter();
             } else {
                 this.classList.add('wrong');
+                setTimeout(() => this.classList.remove('wrong'), 500);
             }
 
             if (correctCount === 4) {
+                confetti({
+                    particleCount: 250,
+                    spread: 150,
+                    origin: { y: 0.5, x: 0.8 },
+                    colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+                });
+                confetti({
+                    particleCount: 250,
+                    spread: 150,
+                    origin: { y: 0.5, x: 0.2 },
+                    colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+                });
+                words.forEach(word => {
+                    word.style.pointerEvents = 'none';
+                });
                 nextButton.style.display = 'inline-block';
                 nextButton.style.animation = 'pulse 0.5s ease';
                 addReward('Б');

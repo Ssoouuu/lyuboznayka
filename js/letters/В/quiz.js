@@ -47,6 +47,18 @@ function checkAnswer(e) {
     const quizItems = document.querySelectorAll('.quiz__item');
 
     if (e === q.correct) {
+                                    confetti({
+                particleCount: 250,
+                spread: 150,
+                origin: { y: 0.5, x: 0.8 },
+                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+            });
+            confetti({
+                particleCount: 250,
+                spread: 150,
+                origin: { y: 0.5, x: 0.2 },
+                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+            });
         quizItems[e].classList.add('correct');
 
         quizItems.forEach(item => {
