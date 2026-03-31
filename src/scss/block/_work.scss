@@ -100,15 +100,18 @@
 
         &__card {
             padding: 50px 8px 30px 8px;
-            min-height: 400px;
+            width: 50%;
 
             &-title {
                 font-size: 28px;
+                width: 100%;
             }
 
             &-text {
-                font-size: 20px;
+                // font-size: 20px;
                 padding-bottom: 25px;
+                align-items: baseline;
+                width: auto;
             }
 
             &::before {
@@ -130,7 +133,7 @@
 
         &__card {
             padding: 45px 6px 25px 6px;
-            min-height: 380px;
+            // min-height: 380px;
 
             &-image img {
                 width: clamp(70px, 12vw, 120px);
@@ -138,12 +141,12 @@
 
             &-title {
                 font-size: 24px;
-                margin: 15px auto;
+                line-height: normal;
             }
 
             &-text {
                 font-size: 18px;
-                padding-bottom: 20px;
+                padding: 0px 10px 20px 10px;
             }
 
             &::before {
@@ -165,8 +168,7 @@
 
         &__card {
             padding: 40px 5px 20px 5px;
-            min-height: 350px;
-            max-width: 350px;
+            width: 60%;
             margin: 0 auto;
 
             &-image img {
@@ -179,7 +181,7 @@
             }
 
             &-text {
-                font-size: 16px;
+                // font-size: 16px;
                 padding-bottom: 15px;
             }
 
@@ -192,18 +194,24 @@
         }
     }
 
+    @media (max-width: 480px) {
+        &__card {
+            width: 80%;
+        }
+    }
+
     // Маленькие мобильные
     @media (max-width: 375px) {
         &__card {
-            min-height: 320px;
+            width: 100%;
 
             &-title {
                 font-size: 20px;
             }
 
-            &-text {
-                font-size: 14px;
-            }
+            // &-text {
+            //     font-size: 15px;
+            // }
         }
     }
 }

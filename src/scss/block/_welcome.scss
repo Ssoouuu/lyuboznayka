@@ -1,6 +1,6 @@
 .welcome {
-        padding: 50px 60px 0px 60px;
-        background-color: var(--background);
+    padding: 50px 60px 0px 60px;
+    background-color: var(--background);
 
     &__wrapper {
         position: relative;
@@ -115,180 +115,200 @@
     }
 }
 
-/* ===== АДАПТАЦИЯ ПОД ПЛАНШЕТЫ (768px - 1024px) ===== */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     .welcome {
         padding: 40px 40px 0px 40px;
-        
+
         &__content {
             padding-left: 5%;
             margin-top: 30px;
-            
-            h1 {
-                font-size: clamp(24px, 3.5vw, 36px);
-            }
-            
-            p {
-                font-size: clamp(15px, 2vw, 20px);
-            }
+
+            // h1 {
+            //     font-size: 40px;
+            // }
+
+            // p {
+            //     font-size: clamp(15px, 2vw, 20px);
+            // }
         }
-        
+
         &__picture {
             width: 45%;
             top: 8vw;
-            
+
             .letter-group {
                 width: 70px;
                 height: 70px;
-                
+
                 .light {
                     width: 280%;
                     height: 280%;
                 }
+
+                .letter {
+                    width: 70%;
+                }
             }
-            
+
             .letter-group--a {
                 left: -20px;
+
+                .letter--a {
+                    width: 90%;
+                }
             }
-            
+
             .letter-group--b {
                 left: 30%;
             }
-            
+
             .letter-group--c {
                 right: 30px;
             }
         }
-        
-        .btn-green {
-            width: 60%;
-            min-width: 180px;
-        }
+
+        // .btn-green {
+        //     width: 60%;
+        //     min-width: 180px;
+        // }
     }
 }
 
-/* ===== АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ (до 768px) ===== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
     .welcome {
         padding: 30px 20px 0px 20px;
-        
+
         &__wrapper {
-            flex-direction: column;  /* Ставим в колонку */
+            flex-direction: column; /* Ставим в колонку */
             align-items: center;
             gap: 30px;
         }
-        
+
         &__content {
             width: 100%;
             padding-left: 0;
             text-align: center;
             margin-top: 20px;
             margin-bottom: 80px;
-            
+
             h1 {
-                font-size: clamp(24px, 6vw, 32px);
-                margin-bottom: 15px;
-                width: 100%;
+                // font-size: clamp(24px, 6vw, 32px);
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 50px;
+                // line-height: 150%;
             }
-            
+
             p {
-                font-size: clamp(16px, 4vw, 18px);
-                margin-bottom: 25px;
-                width: 100%;
+                // font-size: clamp(16px, 4vw, 18px);
+                width: 70%;
+                line-height: 150%;
+                margin: 0px auto;
+                margin-bottom: 50px;
             }
         }
-        
+
         &__picture {
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
-            top: 0;  /* Убираем смещение */
-            
+            top: 0; /* Убираем смещение */
+
             .letter-group {
                 width: 60px;
                 height: 60px;
-                
+
                 .light {
                     width: 250%;
                     height: 250%;
                 }
+
+                .letter {
+                    width: 100%;
+                }
             }
-            
+
             .letter-group--a {
                 top: 5%;
                 left: -15px;
             }
-            
+
             .letter-group--b {
                 top: -10%;
                 left: 30%;
             }
-            
+
             .letter-group--c {
                 right: 20px;
                 top: -12%;
             }
         }
-        
+
         .btn-green {
-            width: 80%;
-            max-width: 280px;
-            min-width: auto;
-            margin: 0 auto;
-            padding: 12px 24px;
-            font-size: 20px;
+            margin-top: 0px;
         }
     }
 }
 
-/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
 @media screen and (max-width: 480px) {
     .welcome {
         padding: 20px 15px 0px 15px;
-        -webkit-text-stroke: 1px currentColor;
-        
+        // -webkit-text-stroke: 1px currentColor;
+
         &__content {
-            width: 90%;
+            width: 100%;
             h1 {
-                font-size: 22px;
-                -webkit-text-stroke: 1px currentColor;
+                line-height: normal;
+                // -webkit-text-stroke: 1px currentColor;
+                width: 100%;
             }
-            
+
             p {
-                font-size: 15px;
+                // font-size: 15px;
+                width: 90%;
             }
         }
-        
+
         &__picture {
             width: 85%;
-            
+
             .letter-group {
                 width: 50px;
                 height: 50px;
-                
+
                 .light {
                     width: 250%;
                     height: 250%;
                 }
             }
-            
+
             .letter-group--a {
                 left: -10px;
             }
-            
+
             .letter-group--b {
                 left: 35%;
             }
-            
+
             .letter-group--c {
                 right: 10px;
             }
         }
-        
-        .btn-green {
-            width: 100%;
-            font-size: 18px;
-            padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .welcome {
+        &__picture {
+            .letter-group {
+                .letter {
+                    width: 60%;
+                }
+            }
+        }
+
+        &__wrapper {
+            gap: 0px;
         }
     }
 }

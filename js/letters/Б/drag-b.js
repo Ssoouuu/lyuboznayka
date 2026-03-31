@@ -9,11 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     container.style.position = 'relative';
 
     let corrCount = 0;
-
-    function updateCounter() {
-        counter.textContent = corrCount;
-    }
-
+    function updateCounter() { counter.textContent = corrCount; }
     updateCounter();
 
     let correctCount = 0;
@@ -22,49 +18,42 @@ document.addEventListener('DOMContentLoaded', function () {
     let dragging = false;
     let offsetX, offsetY;
 
-    butterfly.addEventListener('mousedown', function (e) {
+    // --- Единая функция получения координат ---
+    function getClientCoords(e) {
+        if (e.touches) return { clientX: e.touches[0].clientX, clientY: e.touches[0].clientY };
+        return { clientX: e.clientX, clientY: e.clientY };
+    }
+
+    function onStart(e) {
         e.preventDefault();
-
-        // Запоминаем координаты бабочки на экране (до добавления класса)
+        const coords = getClientCoords(e);
         const rect = butterfly.getBoundingClientRect();
-
-        // Включаем режим перетаскивания — добавляем класс с position:absolute
         butterfly.classList.add('dragging');
-
-        // Теперь бабочка позиционируется абсолютно относительно #drag-b
-        // Вычисляем её положение относительно контейнера
         const containerRect = container.getBoundingClientRect();
         butterfly.style.left = (rect.left - containerRect.left) + 'px';
         butterfly.style.top = (rect.top - containerRect.top) + 'px';
-
-        // Вычисляем смещение курсора от левого верхнего угла бабочки
-        offsetX = e.clientX - rect.left;
-        offsetY = e.clientY - rect.top;
-
+        offsetX = coords.clientX - rect.left;
+        offsetY = coords.clientY - rect.top;
         dragging = true;
-    });
+    }
 
-    document.addEventListener('mousemove', function (e) {
+    function onMove(e) {
         if (!dragging) return;
-
+        const coords = getClientCoords(e);
         const containerRect = container.getBoundingClientRect();
-        butterfly.style.left = (e.clientX - containerRect.left - offsetX) + 'px';
-        butterfly.style.top = (e.clientY - containerRect.top - offsetY) + 'px';
-    });
+        butterfly.style.left = (coords.clientX - containerRect.left - offsetX) + 'px';
+        butterfly.style.top = (coords.clientY - containerRect.top - offsetY) + 'px';
+    }
 
-    document.addEventListener('mouseup', function () {
+    function onEnd() {
         if (!dragging) return;
-
         const butterflyRect = butterfly.getBoundingClientRect();
-
-        // Проверка пересечения с цветами
         flowers.forEach(flower => {
             const flowerRect = flower.getBoundingClientRect();
             if (butterflyRect.left < flowerRect.right &&
                 butterflyRect.right > flowerRect.left &&
                 butterflyRect.top < flowerRect.bottom &&
                 butterflyRect.bottom > flowerRect.top) {
-
                 if (flower.dataset.correct === 'true') {
                     flower.classList.add('correct', 'done');
                     corrCount++;
@@ -75,30 +64,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-
-        // Возвращаем бабочку в исходное положение
         butterfly.classList.remove('dragging');
         butterfly.style.left = '';
         butterfly.style.top = '';
         dragging = false;
-
         correctCount = document.querySelectorAll('.drag-b__items img.done').length;
         if (correctCount >= totalCorrect) {
-                        confetti({
-                particleCount: 250,
-                spread: 150,
-                origin: { y: 0.5, x: 0.8 },
-                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-            });
-            confetti({
-                particleCount: 250,
-                spread: 150,
-                origin: { y: 0.5, x: 0.2 },
-                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-            });
+            confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+            confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
             butterfly.style.pointerEvents = 'none';
             nextButton.style.display = 'inline-block';
             nextButton.style.animation = 'pulse 0.5s ease';
         }
-    });
+    }
+
+    // Регистрация событий (и мышь, и тач)
+    butterfly.addEventListener('mousedown', onStart);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+    butterfly.addEventListener('touchstart', onStart);
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', onEnd);
 });

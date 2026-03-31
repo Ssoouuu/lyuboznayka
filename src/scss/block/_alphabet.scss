@@ -109,22 +109,24 @@
 
     // ========== АДАПТИВ ==========
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
         &__wrapper {
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
-        &__letter {
+        &__letter p {
             margin: 0 auto;
+            font-size: 52px;
         }
 
         .sounds {
             &__cards {
-                gap: 25px;
+                gap: 0px;
                 overflow-x: scroll;
                 scroll-snap-type: x mandatory;
                 -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
             }
 
             &__card {
@@ -132,9 +134,9 @@
                 height: 230px;
                 font-size: 20px;
                 padding: 10px;
+                margin: 20px;
                 flex: none;
                 scroll-snap-align: start;
-
                 text-align: center;
             }
         }
@@ -147,9 +149,12 @@
             gap: 20px;
         }
 
+        &__letter p {
+            font-size: 46px;
+        }
+
         .sounds {
             &__cards {
-                gap: 20px;
                 margin: 40px auto;
             }
 
@@ -157,14 +162,9 @@
                 width: 210px;
                 height: 210px;
                 padding: 25px 15px;
-                -webkit-text-stroke: 0px currentColor;
 
                 img {
                     width: 80px;
-                }
-
-                p {
-                    font-size: 16px;
                 }
             }
         }
@@ -174,12 +174,11 @@
     @media (max-width: 576px) {
         &__wrapper {
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 20px;
         }
 
         &__letter {
-            width: 140px;
-            height: 140px;
+            margin: 0px auto;
 
             &::before {
                 width: 20px;

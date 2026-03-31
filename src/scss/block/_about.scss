@@ -2,7 +2,7 @@
     background: var(--background);
     padding: 30px 0;
     width: 100%;
-    -webkit-text-stroke: 0px currentColor;
+    // -webkit-text-stroke: 0px currentColor;
 
     &__picture {
         scale: 1.1;
@@ -30,7 +30,7 @@
         justify-content: center;
         width: 40%;
         min-height: 60vh;
-        -webkit-text-stroke: 1px currentColor;
+        // -webkit-text-stroke: 1px currentColor;
     }
 
  // ========== АДАПТИВ ==========
@@ -48,7 +48,7 @@
             padding: 25px 35px;
             
             .about__text {
-                font-size: 20px;
+                // font-size: 20px;
                 line-height: 1.5;
             }
         }
@@ -130,9 +130,9 @@
             padding: 20px 15px;
             gap: 20px;
             
-            .about__text {
-                font-size: 15px;
-            }
+            // .about__text {
+            //     font-size: 15px;
+            // }
         }
         
         &__picture {
@@ -147,9 +147,9 @@
         &__content {
             padding: 15px 12px;
             
-            .about__text {
-                font-size: 14px;
-            }
+            // .about__text {
+            //     font-size: 15px;
+            // }
         }
         
         &__picture {

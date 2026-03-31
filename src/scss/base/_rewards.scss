@@ -1,7 +1,8 @@
 .rewards {
     h2 {
         color: var(--text-green);
-        margin-bottom: 100px;
+        // margin-bottom: 100px;
+        line-height: 150%;
     }
 
     .action {
@@ -21,6 +22,7 @@
         &__wrapper {
             width: 100%;
             padding: 90px 0px;
+            // margin: 20px 0px;
         }
 
         &__picture {
@@ -71,12 +73,12 @@
     &__item {
         img {
             transition: all 0.3s ease;
-        width: 90%;
+            width: 90%;
 
-        &:hover {
-            scale: 1.2;
+            &:hover {
+                scale: 1.2;
+            }
         }
-    }
     }
 
     &__image {
@@ -86,6 +88,97 @@
 
         img {
             width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .action {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 890px) {
+        .action {
+            &__wrapper {
+                padding: 50px 0px;
+            }
+
+            .btn-yellow {
+                margin: 20px auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .action {
+            padding: 0;
+
+            &__picture img {
+                max-height: 150px;
+            }
+        }
+
+        &__items {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        &__item {
+            img {
+                width: 100%;
+            }
+        }
+
+        &__image img {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .action {
+            h2 {
+                margin: 0 auto 20px auto;
+            }
+            &__picture img {
+                max-height: 120px;
+            }
+
+            .btn-yellow {
+                width: 80%;
+            }
+        }
+
+        
+        &__items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &__image img {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .action {
+            .btn-yellow {
+                width: 70%;
+            }
+
+            &__picture-img:nth-child(2) {
+                top: 0px;
+            }
+
+            &__picture-img:nth-child(1) {
+                top: 0px;
+            }
+
+            .btn-yellow {
+                top: 20px;
+            }
+        }
+
+        &__image img {
+            width: 90%;
         }
     }
 }

@@ -1,108 +1,117 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const letterA = document.getElementById('letter-A');
-    const houses = document.querySelectorAll('.word-house');
-    const container = document.getElementById('drag-a');
-    const nextButton = document.querySelector('.btn-yellow');
+  const letter = document.getElementById('letter-A');
+  const containers = document.querySelectorAll('.word-container');
+  const nextButton = document.querySelector('.btn-yellow');
+  const container = document.getElementById('drag-a');
 
-    // Сначала прячем кнопку "Вперед"
-    nextButton.style.display = 'none';
+  nextButton.style.display = 'none';
+  container.style.position = 'relative';
+  letter.style.position = 'absolute';
 
-    // Убеждаемся что родитель относительный
-    container.style.position = 'relative';
+  let dragging = false;
+  let offsetX, offsetY;
 
-    // Убираем лишние координаты - пусть CSS управляет позицией
-    letterA.style.position = 'absolute';
-
-    let dragging = false;
-    let offsetX, offsetY;
-
-    // Функция проверки - все ли домики заполнены
-    function checkAllHousesFilled() {
-        let allFilled = true;
-
-        houses.forEach(house => {
-            const placeholder = house.querySelector('.placeholder');
-            if (placeholder.textContent === '_') {
-                allFilled = false; // если хоть один домик пустой
-            }
-        });
-
-        return allFilled;
+  // Функция для получения координат (мышь или тач)
+  function getCoords(e) {
+    if (e.touches) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
     }
+    return { x: e.clientX, y: e.clientY };
+  }
 
-    // Хватаем букву
-    letterA.addEventListener('mousedown', function (e) {
-        dragging = true;
+  // Начало перетаскивания
+  function onStart(e) {
+    e.preventDefault();
+    dragging = true;
 
-        letterA.style.transform = 'none';
+    // Запоминаем, где курсор относительно левого верхнего угла буквы
+    const rect = letter.getBoundingClientRect();
+    const coords = getCoords(e);
+    offsetX = coords.x - rect.left;
+    offsetY = coords.y - rect.top;
 
-        const rect = letterA.getBoundingClientRect();
-        offsetX = e.clientX - rect.left;
-        offsetY = e.clientY - rect.top;
+    // Фиксируем текущую позицию буквы в left/top
+    const parentRect = container.getBoundingClientRect();
+    letter.style.left = (rect.left - parentRect.left) + 'px';
+    letter.style.top = (rect.top - parentRect.top) + 'px';
+  }
 
-        e.preventDefault();
-    });
+  // Перемещение
+  function onMove(e) {
+    if (!dragging) return;
+    e.preventDefault();
 
-    // Тащим
-    document.addEventListener('mousemove', function (e) {
-        if (!dragging) return;
+    const coords = getCoords(e);
+    const parentRect = container.getBoundingClientRect();
 
-        const parentRect = container.getBoundingClientRect();
+    let newLeft = coords.x - parentRect.left - offsetX;
+    let newTop = coords.y - parentRect.top - offsetY;
 
-        letterA.style.left = (e.clientX - parentRect.left - offsetX) + 'px';
-        letterA.style.top = (e.clientY - parentRect.top - offsetY) + 'px';
-    });
+    letter.style.left = newLeft + 'px';
+    letter.style.top = newTop + 'px';
+  }
 
-    // Отпускаем
-    document.addEventListener('mouseup', function () {
-        if (!dragging) return;
+  // Отпускание
+  function onEnd() {
+    if (!dragging) return;
 
-        // Проверяем домики
-        houses.forEach(house => {
-            const houseRect = house.getBoundingClientRect();
-            const letterRect = letterA.getBoundingClientRect();
+    const letterRect = letter.getBoundingClientRect();
 
-            if (letterRect.left < houseRect.right &&
-                letterRect.right > houseRect.left &&
-                letterRect.top < houseRect.bottom &&
-                letterRect.bottom > houseRect.top) {
+    // Проверяем, на какой контейнер (домик) наложилась буква
+    containers.forEach(container => {
+      const img = container.querySelector('img');
+      const houseRect = container.getBoundingClientRect();
 
-                const placeholder = house.querySelector('.placeholder');
-                if (placeholder.textContent === '_') {
-                    placeholder.textContent = 'А';
-                    placeholder.style.color = '#FFBD4D';
-                    house.style.borderColor = '#22c55e';
-                    house.style.backgroundColor = '#f0fdf4';
-                }
-            }
-        });
+      if (letterRect.left < houseRect.right &&
+          letterRect.right > houseRect.left &&
+          letterRect.top < houseRect.bottom &&
+          letterRect.bottom > houseRect.top) {
 
-        // Возвращаем букву
-        letterA.style.left = '';
-        letterA.style.top = '';
-        letterA.style.transform = 'none';
-        letterA.style.position = 'absolute';
+        // Меняем картинку, если она ещё не заменена
+        if (!img.dataset.done) {
+           const wordHouse = container.querySelector('.word-house');
+        let newSrc = '';
 
-        dragging = false;
-
-        // ПРОВЕРЯЕМ - все ли домики заполнены?
-        if (checkAllHousesFilled()) {
-            confetti({
-                particleCount: 250,
-                spread: 150,
-                origin: { y: 0.5, x: 0.8 },
-                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-            });
-            confetti({
-                particleCount: 250,
-                spread: 150,
-                origin: { y: 0.5, x: 0.2 },
-                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-            });
-            letterA.style.pointerEvents = 'none';
-            // Если все заполнены - показываем кнопку "Вперед"
-            nextButton.style.display = 'inline-block';
-            nextButton.style.animation = 'pulse 0.5s ease';
+        if (wordHouse.id === 'house1') {
+          newSrc = '../../public/alphabet/home-1-green.svg';   // например, '../../public/alphabet/home-1-green.png'
+        } else if (wordHouse.id === 'house2') {
+          newSrc = '../../public/alphabet/home-2-green.svg';
+        } else if (wordHouse.id === 'house3') {
+          newSrc = '../../public/alphabet/home-3-green.svg';
         }
+
+        img.src = newSrc;
+        img.dataset.done = 'true';
+      
+        }
+      }
     });
+
+    // Возвращаем букву на исходное место
+    letter.style.left = '';
+    letter.style.top = '';
+
+    dragging = false;
+
+    // Проверяем, все ли картинки заменены
+    const allDone = Array.from(containers).every(c => c.querySelector('img').dataset.done === 'true');
+    if (allDone) {
+      // Запускаем конфетти
+      confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+      confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+
+      letter.style.pointerEvents = 'none'; // букву больше нельзя трогать
+      nextButton.style.display = 'inline-block';
+      nextButton.style.animation = 'pulse 0.5s ease';
+    }
+  }
+
+  // Регистрируем события
+  letter.addEventListener('mousedown', onStart);
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onEnd);
+
+  letter.addEventListener('touchstart', onStart);
+  document.addEventListener('touchmove', onMove);
+  document.addEventListener('touchend', onEnd);
 });

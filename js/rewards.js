@@ -60,6 +60,21 @@ function renderRewardsPage() {
         // Собираем всё вместе
         rewardItem.appendChild(img);
         rewardsItemsContainer.appendChild(rewardItem);
+
+        rewardItem.addEventListener('click', function() {
+             confetti({
+                    particleCount: 250,
+                    spread: 150,
+                    origin: { y: 0.5, x: 0.8 },
+                    colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+                });
+                confetti({
+                    particleCount: 250,
+                    spread: 150,
+                    origin: { y: 0.5, x: 0.2 },
+                    colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
+                });
+        })
     });
 }
 
