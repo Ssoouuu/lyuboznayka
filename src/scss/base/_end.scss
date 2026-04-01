@@ -34,13 +34,59 @@
             width: 40%;
         }
     }
-}
-    #confetti {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh; 
-        pointer-events: none; 
-        z-index: 0;
+
+    @media screen and (max-width: 1200px) {
+        .btn-green,
+        .btn-yellow {
+            width: 70%;
+        }
+
+        &-image {
+            img {
+                width: 60%;
+            }
+        }
     }
+
+    @media screen and (max-width: 980px) {
+        &-btn {
+            flex-direction: column;
+        }
+
+        .btn-green,
+        .btn-yellow {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        gap: 30px;
+        .btn-green,
+        .btn-yellow {
+            max-width: none;
+        }
+
+        &-text {
+            span {
+                font-size: 26px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        &-image {
+            img {
+                width: 75%;
+            }
+        }
+    }
+}
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
