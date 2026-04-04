@@ -6,9 +6,9 @@
     align-items: center;
     width: 100%;
 
-    &__text {
-        margin: 30px 0;
-    }
+    // &__text {
+    //     margin: 30px 0;
+    // }
 
     &__rows {
         display: flex;
@@ -23,51 +23,6 @@
         gap: 30px;
     }
 
-    // &__item {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     text-align: center;
-    //     flex-direction: row;
-    //     text-align: center;
-    //     padding: 24px 50px;
-    //     border: 5px dashed var(--text-blue);
-    //     border-radius: 10px;
-    //     font-size: 40px;
-    //     background-color: var(--light-blue);
-    //     color: var(--text-blue);
-    //     transition: all 0.3s ease;
-    //     cursor: pointer;
-    //     position: relative;
-
-    //     &:hover {
-    //         scale: 1.1;
-    //     }
-
-    //     span {
-    //         font-size: 30px;
-    //         margin-right: 5px;
-    //     }
-
-    //     &--yellow {
-    //         background: var(--light-yellow);
-    //         color: var(--yellow);
-    //         border-color: var(--yellow);
-    //     }
-
-    //     &--green {
-    //         background: var(--light-green);
-    //         color: var(--text-green);
-    //         border-color: var(--text-green);
-    //     }
-
-    //     &--purple {
-    //         background: var(--light-purple);
-    //         color: var(--dark-purple);
-    //         border-color: var(--dark-purple);
-    //     }
-    // }
-
     &__item {
         display: flex;
         flex-direction: column;
@@ -75,12 +30,12 @@
         font-size: 22px;
         cursor: pointer;
         transition: all 0.3s ease;
-        padding: 24px 50px;
+        padding: 20px 40px;
         border: 5px dashed var(--text-blue);
         border-radius: 10px;
 
         .icon {
-            font-size: 100px;
+            font-size: 90px;
         }
 
         &:hover {
@@ -132,6 +87,47 @@
 
         100% {
             scale: 1;
+        }
+    }
+
+    // Адаптив
+    @media screen and (max-width: 1200px) {
+        &__item {
+            .icon {
+                font-size: 70px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        &__row {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        &__item {
+            p {
+                font-size: 16px;
+            }
+
+            .icon {
+                font-size: 60px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__row {
+            gap: 25px;
+        }
+
+        &__item {
+            padding: 15px 30px;
         }
     }
 }

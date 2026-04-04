@@ -7,9 +7,9 @@
     // -webkit-text-stroke: 1px currentColor;
     min-height: 100vh;
 
-    h1 {
-        font-size: 56px;
-    }
+    // h1 {
+    //     font-size: 56px;
+    // }
 
     &__items {
         display: grid;
@@ -63,13 +63,61 @@
             animation: butterfly 2s ease infinite;
 
             &.dragging {
-                
-                position: absolute; /* во время перетаскивания уходим в абсолют */
+                position: absolute;
                 cursor: grabbing;
-                // transform: scale(1.2); /* увеличиваем, но без translate */
-                // filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
                 z-index: 1000;
                 transition: none;
+            }
+        }
+    }
+
+    // Адаптив
+    @media screen and (max-width: 1200px) {
+        &__butterfly {
+            margin-top: 0px;
+            height: 150px;
+            img {
+                width: 150px;
+                height: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__items {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            margin: 0px;
+            padding: 50px;
+
+            img {
+                flex: none;
+                scroll-snap-align: start;
+                width: 40%;
+                text-align: center;
+            }
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__items {
+            img {
+                width: 55%;
+            }
+        }
+
+        &__butterfly {
+            margin-top: 0px;
+            height: 130px;
+            img {
+                width: 120px;
+                height: auto;
             }
         }
     }
@@ -78,22 +126,22 @@
 // АНИМАЦИИ
 
 @keyframes wrong {
-        0%,
-        100% {
-            transform: translateX(0);
-        }
-        20% {
-            transform: translateX(-12px);
-        }
-        40% {
-            transform: translateX(12px);
-        }
-        60% {
-            transform: translateX(-8px);
-        }
-        80% {
-            transform: translateX(8px);
-        }
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-12px);
+    }
+    40% {
+        transform: translateX(12px);
+    }
+    60% {
+        transform: translateX(-8px);
+    }
+    80% {
+        transform: translateX(8px);
+    }
 }
 
 @keyframes butterfly {

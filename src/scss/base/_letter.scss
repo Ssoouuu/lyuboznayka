@@ -67,6 +67,14 @@
         .btn-yellow {
             width: 90%;
         }
+
+        .btn-yellow {
+            order: 1;
+        }
+
+        .btn-green {
+            order: 2;
+        }
     }
 
     @media screen and (max-width: 768px) {

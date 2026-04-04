@@ -1,7 +1,7 @@
 const quiz = [
     {
         image: '../../../public/alphabet/Буква В - вопрос 1.webp',
-        quest: 'В каком слове <span style="border-bottom: 3px solid var(--text-blue); color: var(--text-blue); font-size: 28px;">нет</span> буквы «<span class="blue">В</span>»?',
+        quest: 'В каком слове <span class="blue" style="border-bottom: 3px solid var(--text-blue);">нет</span> буквы «<span class="blue">В</span>»?',
         ans: ['ВОЛК', 'ВОРОНА', 'САМОЛЁТ'],
         correct: 2
     },

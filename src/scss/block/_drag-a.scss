@@ -159,6 +159,16 @@ section.letter-btn {
     padding-top: 1%;
     display: flex;
     gap: 5%;
+
+    @media screen and (max-width: 980px) {
+        .btn-yellow {
+            order: 1;
+        }
+
+        .btn-green {
+            order: 2;
+        }
+    }
 }
 
 .letter-btn a {
