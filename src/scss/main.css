@@ -2216,12 +2216,17 @@ section.click-b {
   justify-content: center;
   align-items: center;
   position: relative;
+  gap: 30px;
 }
 .quiz__content {
   width: 60%;
 }
 .quiz__content h1 {
   color: var(--text-green);
+  font-size: 52px;
+}
+.quiz__content h1 span {
+  font-size: 44px;
 }
 .quiz__text {
   margin-bottom: 30px;
@@ -2256,7 +2261,7 @@ section.click-b {
 .quiz__image {
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 60%;
 }
 .quiz__image img {
   margin: auto 0;
@@ -2292,7 +2297,7 @@ section.click-b {
     scale: 1;
   }
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1024px) {
   .quiz__container {
     flex-direction: column;
     text-align: center;

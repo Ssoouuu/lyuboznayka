@@ -4,6 +4,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        gap: 30px;
     }
 
     &__content {
@@ -11,7 +12,14 @@
 
         h1 {
             color: var(--text-green);
+            font-size: 52px;
+            
+            span {
+            font-size: 44px;
         }
+        }
+
+        
     }
 
     &__text {
@@ -54,7 +62,7 @@
     &__image {
         display: flex;
         align-items: center;
-        width: 90%;
+        width: 60%;
 
         img {
             margin: auto 0;
@@ -95,7 +103,7 @@
         }
     }
 
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1024px) {
         &__container {
             flex-direction: column;
             text-align: center;

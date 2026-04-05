@@ -9,7 +9,7 @@ const lettersContent = {
         image: '../public/alphabet/Буква А - теория.webp',
         link: '../letter-html/A/drag-a.html?letter=А',
         endImage: '../public/alphabet/Конец-А.webp',
-        endText: 'Поздравляем! Ты — Знаток буквы «<span class="letter-yellow">А</span>»!'
+        endText: 'Отличная работа! Буква «<span class="letter-yellow">А</span>» заслуженно твоя!'
     },
     'Б': {
         title: 'Познакомься — это буква «<span class="letter-blue">Б</span>»',
@@ -17,7 +17,7 @@ const lettersContent = {
         image: '../public/alphabet/Буква Б - теория.webp',
         link: '../letter-html/Б/drag-b.html?letter=Б',
         endImage: '../public/alphabet/Конец-Б.webp',
-        endText: 'Поздравляем! Ты — Знаток буквы «<span class="letter-blue">Б</span>»!'
+        endText: 'Супер! Забирай букву «<span class="letter-blue">Б</span>» в награду!'
     },
     'В': {
         title: 'Привет, буква «<span class="letter-blue">В</span>»!',
@@ -25,23 +25,23 @@ const lettersContent = {
         image: '../public/alphabet/Буква В - теория.webp',
         link: '../letter-html/В/quiz.html?letter=В',
         endImage: '../public/alphabet/Конец-В.webp',
-        endText: 'Ты отлично прошел викторину на знание буквы «<span class="letter-blue">В</span>»!'
+        endText: 'Вау, отличный результат! Ты — Знаток буквы «<span class="letter-blue">В</span>»!'
     },
     'Г': {
         title: 'Ура! Новая буква — «<span class="letter-blue">Г</span>»!',
-        text: 'Познакомься с буквой «<span class="letter-blue">Г</span>». Она стоит на стройной ножке, а сверху у неё маленькая шапочка. На ней висит спелая <span class="letter-blue">Г</span>руша — любимое лакомство Любознайки! Эта буква любит прятаться в середине слов: кни<span class="letter-blue">Г</span>а, и<span class="letter-blue">Г</span>ра, ва<span class="letter-blue">Г</span>он. Какая она трудолюбивая!',
+        text: 'Познакомься с буквой «<span class="letter-blue">Г</span>». Она стоит на стройной ножке, чтобы быть самой высокой! На ней висит спелая <span class="letter-blue">Г</span>руша — любимое лакомство Любознайки! Эта буква любит прятаться в середине слов: кни<span class="letter-blue">Г</span>а, и<span class="letter-blue">Г</span>ра, ва<span class="letter-blue">Г</span>он.',
         image: '../public/alphabet/Буква Г - теория.webp',
         link: '../letter-html/Г/click-d.html?letter=Г',
         endImage: '../public/alphabet/Конец-Г.webp',
-        endText: 'Молодец! Ты познакомился с буквой «<span class="letter-blue">Г</span>»!'
+        endText: 'Вот и буква «<span class="letter-blue">Г</span>»! Любознайка гордится тобой!'
     },
     'Д': {
         title: 'Смотри — это буква «<span class="letter-blue">Д</span>»!',
-        text: 'А ты знаешь букву «<span class="letter-blue">Д</span>»? Она стоит на крепких ножках, а сверху у неё крыша, как у домика. А ещё она прячется в словах: <span class="letter-blue">Д</span>ом, <span class="letter-blue">Д</span>руг, са<span class="letter-blue">Д</span>. Когда произносишь букву «<span class="letter-blue">Д</span>», язычок упирается в верхние зубки и звонко стучит: <span class="letter-blue">Д-д-д</span>! Давай изучим её вместе!',
+        text: 'А ты знаешь букву «<span class="letter-blue">Д</span>»? Она стоит на крепких ножках, а сверху у неё крыша, как у <span class="letter-blue">Д</span>ома. А ещё она прячется в словах: Е<span class="letter-blue">д</span>а, <span class="letter-blue">Д</span>руг, са<span class="letter-blue">Д</span>. Когда произносишь букву «<span class="letter-blue">Д</span>», язычок упирается в верхние зубки и звонко стучит: <span class="letter-blue">Д-д-д</span>! Давай изучим её вместе!',
         image: '../public/alphabet/Буква Д - теория.webp',
         link: '../letter-html/Д/click-e.html?letter=Д',
         endImage: '../public/alphabet/Конец-Д.webp',
-        endText: 'Молодец! Ты отлично справился с изучением буквы «<span class="letter-blue">Д</span>»!'
+        endText: 'Ого! Новая буква в твоей копилке — «<span class="letter-blue">Д</span>»!'
     }
 };
 
