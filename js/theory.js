@@ -32,7 +32,7 @@ const lettersContent = {
     },
     'Г': {
         title: 'Ура! Новая буква — «<span class="letter-blue">Г</span>»!',
-        text: 'Познакомься с буквой «<span class="letter-blue">Г</span>». Она стоит на стройной ножке, чтобы быть самой высокой! На ней висит спелая <span class="letter-blue">Г</span>руша — любимое лакомство Любознайки! Эта буква любит прятаться в середине слов: кни<span class="letter-blue">Г</span>а, и<span class="letter-blue">Г</span>ра, ва<span class="letter-blue">Г</span>он.',
+        text: 'Познакомься с буквой «<span class="letter-blue">Г</span>». Она стоит на стройной ножке, чтобы быть самой высокой! На ней висит спелая <span class="letter-blue">Г</span>руша — любимое лакомство Любознайки! Эта буква любит прятаться в середине слов: кни<span class="letter-blue">Г</span>а, ти<span class="letter-blue">Г</span>р, ва<span class="letter-blue">Г</span>он.',
         image: '../public/alphabet/Буква Г - теория.webp',
         link: '../letter-html/Г/click-d.html?letter=Г',
         endImage: '../public/alphabet/Конец-Г.webp',
