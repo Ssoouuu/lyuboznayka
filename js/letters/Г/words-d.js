@@ -17,9 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.style.pointerEvents = 'none';
                 correctCount++;
                 if (rowOne) rowOne.style.display = 'grid';
+                const sound = new Audio('../../public/audio/base/Верный-ответ.mp3');
+                sound.volume = 0.5;
+                sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
             } else {
                 this.classList.add('wrong');
                 setTimeout(() => this.classList.remove('wrong'), 500);
+                const sound = new Audio('../../public/audio/base/Неверный-ответ.mp3');
+                sound.volume = 0.5;
+                sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
             }
 
             if (correctCount === 2) {
@@ -27,18 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (correctCount === 3) {
-                confetti({
-                    particleCount: 250,
-                    spread: 150,
-                    origin: { y: 0.5, x: 0.8 },
-                    colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-                });
-                confetti({
-                    particleCount: 250,
-                    spread: 150,
-                    origin: { y: 0.5, x: 0.2 },
-                    colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-                });
+                setTimeout(() => {
+                    const sound = new Audio('../../public/audio/base/конфетти.mp3');
+                    sound.volume = 0.5;
+                    sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+                    confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+                    confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+                }, 400);
                 words.forEach(item => {
                     item.style.pointerEvents = 'none';
                 });

@@ -47,24 +47,22 @@ function checkAnswer(e) {
     const quizItems = document.querySelectorAll('.quiz__item');
 
     if (e === q.correct) {
-                                    confetti({
-                particleCount: 250,
-                spread: 150,
-                origin: { y: 0.5, x: 0.8 },
-                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-            });
-            confetti({
-                particleCount: 250,
-                spread: 150,
-                origin: { y: 0.5, x: 0.2 },
-                colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF']
-            });
+        setTimeout(() => {
+            const sound = new Audio('../../public/audio/base/конфетти.mp3');
+            sound.volume = 0.5;
+            sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+            confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+            confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+        }, 400);
         quizItems[e].classList.add('correct');
 
         quizItems.forEach(item => {
             item.style.pointerEvents = 'none';
             item.classList.add('disabled');
         });
+        const sound = new Audio('../../public/audio/base/Верный-ответ.mp3');
+        sound.volume = 0.5;
+        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
 
         // Следующий вопрос
         setTimeout(() => {
@@ -84,6 +82,9 @@ function checkAnswer(e) {
         setTimeout(() => {
             quizItems[e].classList.remove('wrong');
         }, 500);
+        const sound = new Audio('../../public/audio/base/Неверный-ответ.mp3');
+        sound.volume = 0.5;
+        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
     }
 }
 

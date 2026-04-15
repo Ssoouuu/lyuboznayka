@@ -241,3 +241,27 @@ h1 {
 .header-main header {
     background: var(--background);
 }
+
+.btn-audio {
+    color: var(--white);
+    background: var(--green);
+    aspect-ratio: 1 / 1; 
+    border-radius: 50%;
+    border: none;
+    transition: all 0.3s ease;
+    width: 60px;
+    padding: 10px;
+    margin-left: auto;
+
+    &:hover {
+        scale: 1.1;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 50px;
+    }
+
+    @media screen and (max-width: 576px) {
+        width: 40px;
+    }
+}

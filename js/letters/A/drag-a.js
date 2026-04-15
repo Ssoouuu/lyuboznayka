@@ -63,27 +63,30 @@ document.addEventListener('DOMContentLoaded', function () {
       const houseRect = container.getBoundingClientRect();
 
       if (letterRect.left < houseRect.right &&
-          letterRect.right > houseRect.left &&
-          letterRect.top < houseRect.bottom &&
-          letterRect.bottom > houseRect.top) {
+        letterRect.right > houseRect.left &&
+        letterRect.top < houseRect.bottom &&
+        letterRect.bottom > houseRect.top) {
 
         // Меняем картинку, если она ещё не заменена
         if (!img.dataset.done) {
-           const wordHouse = container.querySelector('.word-house');
-        let newSrc = '';
+          const wordHouse = container.querySelector('.word-house');
+          let newSrc = '';
 
-        if (wordHouse.id === 'house1') {
-          newSrc = '../../public/alphabet/home-1-green.svg';   // например, '../../public/alphabet/home-1-green.png'
-        } else if (wordHouse.id === 'house2') {
-          newSrc = '../../public/alphabet/home-2-green.svg';
-        } else if (wordHouse.id === 'house3') {
-          newSrc = '../../public/alphabet/home-3-green.svg';
-        }
+          if (wordHouse.id === 'house1') {
+            newSrc = '../../public/alphabet/home-1-green.svg';   // например, '../../public/alphabet/home-1-green.png'
+          } else if (wordHouse.id === 'house2') {
+            newSrc = '../../public/alphabet/home-2-green.svg';
+          } else if (wordHouse.id === 'house3') {
+            newSrc = '../../public/alphabet/home-3-green.svg';
+          }
 
-        img.src = newSrc;
-        img.dataset.done = 'true';
-      
+          img.src = newSrc;
+          img.dataset.done = 'true';
+
         }
+        const sound = new Audio('../../public/audio/base/Верный-ответ.mp3');
+        sound.volume = 0.5;
+        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
       }
     });
 
@@ -97,8 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const allDone = Array.from(containers).every(c => c.querySelector('img').dataset.done === 'true');
     if (allDone) {
       // Запускаем конфетти
-      confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
-      confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+      setTimeout(() => {
+        const sound = new Audio('../../public/audio/base/конфетти.mp3');
+        sound.volume = 0.5;
+        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+        confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+        confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
+      }, 400);
 
       letter.style.pointerEvents = 'none'; // букву больше нельзя трогать
       nextButton.style.display = 'inline-block';

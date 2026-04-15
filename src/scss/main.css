@@ -253,6 +253,31 @@ h1 {
   background: var(--background);
 }
 
+.btn-audio {
+  color: var(--white);
+  background: var(--green);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3s ease;
+  width: 60px;
+  padding: 10px;
+  margin-left: auto;
+}
+.btn-audio:hover {
+  scale: 1.1;
+}
+@media screen and (max-width: 768px) {
+  .btn-audio {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .btn-audio {
+    width: 40px;
+  }
+}
+
 :root {
   --green: #22C55E;
   --light-green: #DDFAE8;
@@ -581,6 +606,7 @@ section.error {
 }
 .letter-title {
   margin: 0 auto;
+  margin-top: -2%;
 }
 .letter-text span {
   font-size: 40px;
