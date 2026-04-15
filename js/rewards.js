@@ -62,6 +62,9 @@ function renderRewardsPage() {
         rewardsItemsContainer.appendChild(rewardItem);
 
         rewardItem.addEventListener('click', function() {
+            const sound = new Audio('../../public/audio/base/конфетти.mp3');
+            sound.volume = 0.5;
+            sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
              confetti({
                     particleCount: 250,
                     spread: 150,
