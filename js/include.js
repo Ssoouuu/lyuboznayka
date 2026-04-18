@@ -11,6 +11,12 @@ fetch('../../components-html/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
+         if (typeof initResetBtn === 'function') {
+            initResetBtn();
+        }
+        if (typeof updateReset === 'function') {
+            updateReset();
+        }
     })
     .catch(error => console.error('Ошибка загрузки подвала:', error));
 

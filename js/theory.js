@@ -1,6 +1,3 @@
-console.log('theory.js загрузился!');
-console.log('Буква из URL:', window.location.search);
-
 // КОНТЕНТ ДЛЯ КАЖДЫЙ БУКВЫ
 const lettersContent = {
     'А': {
@@ -58,7 +55,6 @@ if (!lettersContent[key]) {
 } else {
     const data = lettersContent[key];
 
-    // Проверяем, на какой мы странице
     const isEndPage = window.location.pathname.includes('end.html');
 
     if (isEndPage) {
@@ -75,7 +71,6 @@ if (!lettersContent[key]) {
             restartBtn.href = '../components-html/letter.html?letter=' + key;
         }
     } else {
-        // Если это letter.html - показываем обычный контент
         document.getElementById('letter-title').innerHTML = data.title;
         document.getElementById('letter-text').innerHTML = data.text;
         document.getElementById('letter-image').innerHTML = '<img src="' + data.image + '" alt="Буква ' + key + '">';
@@ -91,34 +86,6 @@ if (!lettersContent[key]) {
                 });
             }
         }
-        // if (data.audio) {
-        //     const playBtn = document.getElementById('playSoundBtn');
-        //         const autoAudio = new Audio(data.audio);
-        //     autoAudio.volume = 0.5;
-        //     autoAudio.play().catch(e => console.log('Автовоспроизведение заблокировано'));
-        //     if (playBtn) {
-        //         let currentAudio = null;
-
-        //         playBtn.addEventListener('click', () => {
-        //             if (currentAudio && !currentAudio.paused) {
-        //                 currentAudio.pause();
-        //                 playBtn.textContent = '🔊 Продолжить';
-        //             } else if (currentAudio && currentAudio.paused) {
-        //                 currentAudio.play();
-        //                 playBtn.textContent = '⏹️ Пауза';
-        //             } else {
-        //                 currentAudio = new Audio(data.audio);
-        //                 currentAudio.volume = 0.5;
-        //                 currentAudio.play();
-        //                 playBtn.textContent = '⏹️ Пауза';
-        //                 currentAudio.onended = () => {
-        //                     playBtn.textContent = '🔊 Прослушать';
-        //                     currentAudio = null;
-        //                 };
-        //             }
-        //         });
-        //     }
-        // }
 
         // КНОПКА "ВПЕРЕД"
         const nextButton = document.querySelector('.btn-yellow');
