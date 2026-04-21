@@ -34,15 +34,33 @@ const alphabet = [
     { letter: 'Яя', type: 'yellow', link: '#' }
 ];
 
+let transitionTimer = null;
+
+function playSound(letterChar, targetLink) {
+    const audio = new Audio(`../public/audio/letters/${letterChar}.mp3`);
+    audio.volume = 0.5;
+    currentAudio = audio;
+    audio.play().catch(e => console.log('Ошибка:', e));
+    
+    transitionTimer = setTimeout(() => {
+        window.location.href = targetLink;
+    }, 1500);
+}
+
 function renderAlphabet() {
     const container = document.getElementById('alphabet-container');
-
     alphabet.forEach(item => {
         const link = document.createElement('a');
-        link.href = `components-html/letter.html?letter=${item.letter[0]}`;
+        const targetLink = `components-html/letter.html?letter=${item.letter[0]}`;
+        link.href = 'javascript:void(0)';
         link.className = `alphabet__letter alphabet__letter--${item.type}`;
         link.innerHTML = `<p>${item.letter}</p>`;
-
+        
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            playSound(item.letter[0], targetLink);
+        });
+        
         container.appendChild(link);
     });
 }

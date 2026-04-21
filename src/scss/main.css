@@ -983,6 +983,11 @@ section.letter {
     width: 90%;
   }
 }
+@media screen and (max-width: 430px) {
+  .rewards .action__picture {
+    min-height: 80px;
+  }
+}
 
 /* Blocks */
 .welcome {
@@ -1790,6 +1795,13 @@ section.letter {
   .alphabet .sounds__card {
     width: 210px;
     height: 210px;
+  }
+}
+@media (max-width: 480px) {
+  .alphabet__letter {
+    width: 130px;
+    height: 130px;
+    font-size: 46px;
   }
 }
 
@@ -3088,6 +3100,9 @@ section.words-d {
   .doors-e__items {
     grid-template-columns: repeat(3, 1fr);
   }
+  .doors-e__icon {
+    font-size: 100px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .doors-e__item__image {
@@ -3101,9 +3116,22 @@ section.words-d {
   .doors-e__items {
     gap: 30px;
   }
+  .doors-e__icon {
+    font-size: 80px;
+  }
 }
 @media screen and (max-width: 576px) {
   .doors-e__items {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .doors-e__icon {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .doors-e__icon {
+    font-size: 60px;
   }
 }/*# sourceMappingURL=main.css.map */

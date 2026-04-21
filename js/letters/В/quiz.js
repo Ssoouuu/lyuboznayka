@@ -24,6 +24,17 @@ let currentQuestion = 0;
 const nextButton = document.querySelector('.btn-yellow');
 nextButton.style.display = 'none';
 
+// Предзагрузка звуков 
+const correctSound = new Audio('../../public/audio/base/Верный-ответ.mp3');
+const wrongSound = new Audio('../../public/audio/base/Неверный-ответ.mp3');
+const confettiSound = new Audio('../../public/audio/base/конфетти.mp3');
+correctSound.volume = 0.5;
+wrongSound.volume = 0.5;
+confettiSound.volume = 0.5;
+correctSound.load();
+wrongSound.load();
+confettiSound.load();
+
 // Загрузка вопросов
 function loadQuestion() {
     const q = quiz[currentQuestion]
@@ -48,9 +59,8 @@ function checkAnswer(e) {
 
     if (e === q.correct) {
         setTimeout(() => {
-            const sound = new Audio('../../public/audio/base/конфетти.mp3');
-            sound.volume = 0.5;
-            sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+            confettiSound.currentTime = 0;
+            confettiSound.play().catch(e => console.log('Ошибка:', e));
             confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
             confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
         }, 400);
@@ -60,9 +70,8 @@ function checkAnswer(e) {
             item.style.pointerEvents = 'none';
             item.classList.add('disabled');
         });
-        const sound = new Audio('../../public/audio/base/Верный-ответ.mp3');
-        sound.volume = 0.5;
-        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+        correctSound.currentTime = 0;
+        correctSound.play().catch(e => console.log('Ошибка:', e));
 
         // Следующий вопрос
         setTimeout(() => {
@@ -82,9 +91,8 @@ function checkAnswer(e) {
         setTimeout(() => {
             quizItems[e].classList.remove('wrong');
         }, 500);
-        const sound = new Audio('../../public/audio/base/Неверный-ответ.mp3');
-        sound.volume = 0.5;
-        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+        wrongSound.currentTime = 0;
+        wrongSound.play().catch(e => console.log('Ошибка:', e));
     }
 }
 

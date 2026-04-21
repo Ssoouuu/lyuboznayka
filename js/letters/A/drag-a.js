@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextButton = document.querySelector('.btn-yellow');
   const container = document.getElementById('drag-a');
 
+  // Предзагрузка звуков
+  const correctSound = new Audio('../../public/audio/base/Верный-ответ.mp3');
+  const confettiSound = new Audio('../../public/audio/base/конфетти.mp3');
+  correctSound.volume = 0.5;
+  confettiSound.volume = 0.5;
+  correctSound.load();
+  confettiSound.load();
+
   nextButton.style.display = 'none';
   container.style.position = 'relative';
   letter.style.position = 'absolute';
@@ -83,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
           img.src = newSrc;
           img.dataset.done = 'true';
 
+          correctSound.currentTime = 0;
+          correctSound.play().catch(e => console.log('Ошибка:', e));
+
         }
-        const sound = new Audio('../../public/audio/base/Верный-ответ.mp3');
-        sound.volume = 0.5;
-        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
       }
     });
 
@@ -99,9 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const allDone = Array.from(containers).every(c => c.querySelector('img').dataset.done === 'true');
     if (allDone) {
       setTimeout(() => {
-        const sound = new Audio('../../public/audio/base/конфетти.mp3');
-        sound.volume = 0.5;
-        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+        confettiSound.currentTime = 0;
+        confettiSound.play().catch(e => console.log('Ошибка:', e));
         confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.8 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
         confetti({ particleCount: 250, spread: 150, origin: { y: 0.5, x: 0.2 }, colors: ['#FFBD4D', '#22C55E', '#8B5CF6', '#3D87FF'] });
       }, 400);

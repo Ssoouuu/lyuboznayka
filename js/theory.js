@@ -54,40 +54,54 @@ if (!lettersContent[key]) {
     window.location.href = '../components-html/soon.html?letter=' + key;
 } else {
     const data = lettersContent[key];
-
     const isEndPage = window.location.pathname.includes('end.html');
 
     if (isEndPage) {
-        // Если это end.html - показываем endImage и endText
+        // ---- СТРАНИЦА ПОБЕДЫ ----
         document.getElementById('end-text').innerHTML = data.endText;
         document.getElementById('end-image').innerHTML = '<img src="' + data.endImage + '" alt="Победа">';
-        const sound = new Audio('../public/audio/base/Победа.mp3');
-        sound.volume = 0.3;
-        sound.play().catch(e => console.log('Ошибка воспроизведения:', e));
 
-        // НАЧАТЬ ЗАНОВО
+        // Предзагружаем и проигрываем звук победы
+        const victorySound = new Audio('../public/audio/base/Победа.mp3');
+        victorySound.volume = 0.3;
+        victorySound.load();
+        victorySound.play().catch(e => console.log('Ошибка воспроизведения:', e));
+
+        // Кнопка "Начать заново"
         const restartBtn = document.getElementById('restart-btn');
         if (restartBtn) {
             restartBtn.href = '../components-html/letter.html?letter=' + key;
         }
     } else {
+        // ---- СТРАНИЦА БУКВЫ ----
         document.getElementById('letter-title').innerHTML = data.title;
         document.getElementById('letter-text').innerHTML = data.text;
         document.getElementById('letter-image').innerHTML = '<img src="' + data.image + '" alt="Буква ' + key + '">';
-        // АУДИО
+
+        let letterAudio = null; // для переиспользования
+
         if (data.audio) {
-            const audio = new Audio(data.audio);
+            // Создаём и предзагружаем звук один раз
+            letterAudio = new Audio(data.audio);
+            letterAudio.volume = 0.5;
+            letterAudio.load();
+
+            // Автовоспроизведение
+            letterAudio.play().catch(e => console.log('Ошибка автовоспроизведения:', e));
+
+            // Кнопка повторного воспроизведения
             const playBtn = document.getElementById('playSoundBtn');
-            audio.volume = 0.5;
-            audio.play();
             if (playBtn) {
                 playBtn.addEventListener('click', () => {
-                    audio.play();
+                    if (letterAudio) {
+                        letterAudio.currentTime = 0;
+                        letterAudio.play().catch(e => console.log('Ошибка:', e));
+                    }
                 });
             }
         }
 
-        // КНОПКА "ВПЕРЕД"
+        // Кнопка "Вперёд"
         const nextButton = document.querySelector('.btn-yellow');
         if (data.link) {
             nextButton.href = data.link;

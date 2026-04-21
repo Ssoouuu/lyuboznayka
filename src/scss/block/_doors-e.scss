@@ -87,6 +87,10 @@
         &__items {
             grid-template-columns: repeat(3, 1fr);
         }
+
+        &__icon {
+            font-size: 100px;
+        }
     }
 
     @media screen and (max-width: 1024px) {
@@ -105,11 +109,27 @@
         &__items {
             gap: 30px;
         }
+
+        &__icon {
+            font-size: 80px;
+        }
     }
 
     @media screen and (max-width: 576px) {
         &__items {
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__icon {
+            font-size: 70px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        &__icon {
+            font-size: 60px;
         }
     }
 }
