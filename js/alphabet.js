@@ -34,19 +34,56 @@ const alphabet = [
     { letter: 'Яя', type: 'yellow', link: '#' }
 ];
 
-let transitionTimer = null;
+// Предзагрузка картинок с теорией для всех букв
+const theoryImages = [];
+alphabet.forEach(item => {
+    const letterName = item.letter[0].toUpperCase();
+    const imgSrc = `../public/alphabet/Буква ${letterName} - теория.webp`;
+    const img = new Image();
+    img.src = imgSrc;
+    theoryImages.push(img); // сохраняем, если нужно, но можно и без массива
+});
 
+let transitionTimer = null;
+let currentAudio = null;          // текущий воспроизводимый звук
+
+// Хранилище предзагруженных звуков
+const sounds = {};
+
+// Предзагрузка всех звуков алфавита (загружаем сразу при старте)
+alphabet.forEach(item => {
+    const letter = item.letter[0];
+    const audio = new Audio(`../public/audio/letters/${letter}.mp3`);
+    audio.volume = 0.5;           
+    audio.load();                 
+    sounds[letter] = audio;       
+});
+
+// Функция проигрывания (звук уже предзагружен)
 function playSound(letterChar, targetLink) {
-    const audio = new Audio(`../public/audio/letters/${letterChar}.mp3`);
-    audio.volume = 0.5;
+    const audio = sounds[letterChar];
+    if (!audio) return;
+    
+    // Останавливаем предыдущий звук, если он ещё играет
+    if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    
+    audio.currentTime = 0;        // сброс к началу
     currentAudio = audio;
     audio.play().catch(e => console.log('Ошибка:', e));
     
+    //  отменяет предыдущий запланированный переход
+    clearTimeout(transitionTimer);
+
+    // запуск нового таймера
     transitionTimer = setTimeout(() => {
-        window.location.href = targetLink;
+        window.location.href = targetLink;  
     }, 1500);
 }
 
+// Отрисовка кнопок алфавита
 function renderAlphabet() {
     const container = document.getElementById('alphabet-container');
     alphabet.forEach(item => {
@@ -56,6 +93,7 @@ function renderAlphabet() {
         link.className = `alphabet__letter alphabet__letter--${item.type}`;
         link.innerHTML = `<p>${item.letter}</p>`;
         
+        // При клике – звук и переход
         link.addEventListener('click', (e) => {
             e.preventDefault();
             playSound(item.letter[0], targetLink);

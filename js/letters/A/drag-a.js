@@ -4,6 +4,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextButton = document.querySelector('.btn-yellow');
   const container = document.getElementById('drag-a');
 
+  // Предзагрузка всех картинок, которые используются на странице
+const imagesPreload = [
+    '../../public/alphabet/home-1-blue.svg',
+    '../../public/alphabet/home-2-blue.svg',
+    '../../public/alphabet/home-3-blue.svg',
+    '../../public/alphabet/home-1-green.svg',
+    '../../public/alphabet/home-2-green.svg',
+    '../../public/alphabet/home-3-green.svg'
+];
+
+imagesPreload.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
   // Предзагрузка звуков
   const correctSound = new Audio('../../public/audio/base/Верный-ответ.mp3');
   const confettiSound = new Audio('../../public/audio/base/конфетти.mp3');

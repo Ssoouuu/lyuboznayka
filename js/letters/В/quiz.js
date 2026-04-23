@@ -19,6 +19,12 @@ const quiz = [
     },
 ]
 
+// Предзагрузка изображений для всех вопросов викторины
+quiz.forEach(question => {
+    const img = new Image();
+    img.src = question.image;
+});
+
 let currentQuestion = 0;
 
 const nextButton = document.querySelector('.btn-yellow');
